@@ -213,12 +213,12 @@ INSERT INTO `news` (`nid`, `Ntitle`, `Nauthor`, `Ndate`, `Ncontent`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `officer`
+-- 表的结构 `manage`
 --
 
-DROP TABLE IF EXISTS `officer`;
+DROP TABLE IF EXISTS `manage`;
 
-CREATE TABLE `officer` (
+CREATE TABLE `manage` (
   `oid` int(11) NOT NULL,
   `oname` varchar(255) NOT NULL,
   `ocountry` varchar(255) DEFAULT NULL,
@@ -227,10 +227,10 @@ CREATE TABLE `officer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
 
 --
--- 转存表中的数据 `officer`
+-- 转存表中的数据 `manage`
 --
 
-INSERT INTO `officer` (`oid`, `oname`, `ocountry`, `odescription`) VALUES
+INSERT INTO `manage` (`oid`, `oname`, `ocountry`, `odescription`) VALUES
 (1, '拉斐尔·马里亚诺·格罗西', '阿根廷', '国际原子能机构总干事，确认日本计划将处理过的水排放到海里的做法与国际安全标准一致。'),
 (2, '岸田文雄', '日本', '日本首相，与IAEA官员就废水排放问题进行了会面。'),
 (3, '清水正孝', '日本', '日本东京电力公司前任总裁，福岛核泄露事件期间任职东京电力公司总裁，受该事件影响目前已引咎辞职。'),

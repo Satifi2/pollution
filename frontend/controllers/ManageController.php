@@ -9,18 +9,18 @@ namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\data\Pagination;
-use frontend\models\Officer;
-use frontend\models\OfficerForm;
+use frontend\models\Manage;
+use frontend\models\ManageForm;
 
-class OfficerController extends Controller
+class ManageController extends Controller
 {
     public $layout = "main_layout";
     public function actionIndex()
     {
-        $model = new OfficerForm();
-        $query = Officer::find();
+        $model = new ManageForm();
+        $query = Manage::find();
         //按数据库中数据oid从前往后排序
-        $officers = $query->orderBy('oid ASC')->all();
-        return $this->render('index', ['model' => $model, 'officers' => $officers]);
+        $manages = $query->orderBy('oid ASC')->all();
+        return $this->render('index', ['model' => $model, 'manages' => $manages]);
     }
 }

@@ -8,16 +8,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Officer;
-use backend\models\OfficerSearch;
+use app\models\Manage;
+use backend\models\ManageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OfficerController implements the CRUD actions for Officer model.
+ * ManageController implements the CRUD actions for Manage model.
  */
-class OfficerController extends Controller
+class ManageController extends Controller
 {
     public $layout = "main_layout";
     /**
@@ -36,12 +36,12 @@ class OfficerController extends Controller
     }
 
     /**
-     * Lists all Officer models.
+     * Lists all Manage models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OfficerSearch();
+        $searchModel = new ManageSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -51,7 +51,7 @@ class OfficerController extends Controller
     }
 
     /**
-     * Displays a single Officer model.
+     * Displays a single Manage model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -64,13 +64,13 @@ class OfficerController extends Controller
     }
 
     /**
-     * Creates a new Officer model.
+     * Creates a new Manage model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Officer();
+        $model = new Manage();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->oid]);
@@ -82,7 +82,7 @@ class OfficerController extends Controller
     }
 
     /**
-     * Updates an existing Officer model.
+     * Updates an existing Manage model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -102,7 +102,7 @@ class OfficerController extends Controller
     }
 
     /**
-     * Deletes an existing Officer model.
+     * Deletes an existing Manage model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OfficerController extends Controller
     }
 
     /**
-     * Finds the Officer model based on its primary key value.
+     * Finds the Manage model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Officer the loaded model
+     * @return Manage the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Officer::findOne($id)) !== null) {
+        if (($model = Manage::findOne($id)) !== null) {
             return $model;
         }
 

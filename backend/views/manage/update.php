@@ -7,14 +7,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Officer */
+/* @var $model app\models\Manage */
 
-$this->title = 'Update Officer: ' . $model->oid;
-$this->params['breadcrumbs'][] = ['label' => 'Officers', 'url' => ['index']];
+$this->title = 'Update Manage: ' . $model->oid;
+$this->params['breadcrumbs'][] = ['label' => 'Manages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->oid, 'url' => ['view', 'id' => $model->oid]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="officer-update">
+<div class="manage-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

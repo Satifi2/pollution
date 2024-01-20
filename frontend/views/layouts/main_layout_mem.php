@@ -14,7 +14,7 @@
 	 <link rel="stylesheet" href="css/comment.css">
 	 <link rel="stylesheet" href="css/home.css?v=<%= System.currentTimeMillis()%>">
 	 <link rel="stylesheet" href="css/victim.css">
-	 <link rel="stylesheet" href="css/officer.css">
+	 <link rel="stylesheet" href="css/manage.css">
 	 <link rel="stylesheet" href="css/register.css">
 	 <link rel="stylesheet" href="css/damage.css">
 	 <link rel="stylesheet" href="css/signup_login.css">

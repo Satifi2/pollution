@@ -9,12 +9,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Officer;
+use app\models\Manage;
 
 /**
- * OfficerSearch represents the model behind the search form of `app\models\Officer`.
+ * ManageSearch represents the model behind the search form of `app\models\Manage`.
  */
-class OfficerSearch extends Officer
+class ManageSearch extends Manage
 {
     /**
      * {@inheritdoc}
@@ -45,7 +45,7 @@ class OfficerSearch extends Officer
      */
     public function search($params)
     {
-        $query = Officer::find();
+        $query = Manage::find();
 
         // add conditions that should always apply here
 

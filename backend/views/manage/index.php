@@ -8,18 +8,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\OfficerSearch */
+/* @var $searchModel backend\models\ManageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Officers';
+$this->title = 'Manages';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="officer-index">
+<div class="manage-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Officer', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Manage', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>

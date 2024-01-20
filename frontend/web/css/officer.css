@@ -22,12 +22,12 @@
     }
   }
   
-  .officer-title {
+  .manage-title {
     display: inline-block; /* allows transform to work */
     animation: popIn 1s ease forwards;
   }
 
-.officer-shell {
+.manage-shell {
     height: auto;
     overflow-x: hidden;
     perspective: 1px;
@@ -35,7 +35,7 @@
     background: #fff; 
 }
 
-.officer-title {
+.manage-title {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -47,27 +47,27 @@
     margin-bottom: 1rem;
 }
 
-.officer-img {
+.manage-img {
     max-height: 30vh; /* Adjust size to fit content area */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Add shadow for depth */
 }
 
-.officer-header {
+.manage-header {
     font-size: 1.25rem; /* Slightly larger for readability */
     color: #f0f0f0; /* Light grey for readability */
     margin: 1rem auto;
     text-align: center;
 }
 
-.officer-img-div {
+.manage-img-div {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem; /* Added margin for spacing */
 }
 
-.officer-intro {
+.manage-intro {
     margin: 1rem 2rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -76,7 +76,7 @@
     text-indent: 2em; /* Added indent for paragraphs */
 }
 
-.officer-footer {
+.manage-footer {
     margin: 1rem 2rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -86,7 +86,7 @@
 }
 
 /* 增加容器的宽度以适应更多的内容 */
-.officer-item {
+.manage-item {
     width: 80%; /* 或者具体的宽度，如300px */
     margin: 0 auto; /* 居中显示 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影增加立体感 */
@@ -96,19 +96,19 @@
     margin-bottom: 20px; /* 和下一个元素的距离 */
 }
 
-.officer-img-div {
+.manage-img-div {
     text-align: center; /* 图片居中显示 */
     margin-bottom: 20px; /* 和下面的文本保持距离 */
 }
 
-.officer-img {
+.manage-img {
     width: 150px; /* 设置图片宽度 */
     height: auto; /* 高度自动 */
     border-radius: 50%; /* 圆形头像 */
     border: 3px solid #eee; /* 边框颜色，根据背景调整 */
 }
 
-.officer-name {
+.manage-name {
     font-size: 1.5rem;
     margin-top: 10px;
     color: #333; /* 字体颜色深一些，增加对比度 */
@@ -116,14 +116,14 @@
     text-align: center; /* 文本居中 */
 }
 
-.officer-country {
+.manage-country {
     font-style: italic;
     margin-top: 5px;
     text-align: center; /* 国籍也居中 */
     color: #555; /* 颜色稍浅，区分度 */
 }
 
-.officer-description {
+.manage-description {
     font-size: 1rem;
     margin-top: 10px;
     line-height: 1.6; /* 增加行高提高可读性 */

@@ -8,11 +8,11 @@
 namespace app\models;
 
 /**
- * This is the ActiveQuery class for [[Officer]].
+ * This is the ActiveQuery class for [[Manage]].
  *
- * @see Officer
+ * @see Manage
  */
-class OfficerQuery extends \yii\db\ActiveQuery
+class ManageQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -21,7 +21,7 @@ class OfficerQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Officer[]|array
+     * @return Manage[]|array
      */
     public function all($db = null)
     {
@@ -30,7 +30,7 @@ class OfficerQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Officer|array|null
+     * @return Manage|array|null
      */
     public function one($db = null)
     {

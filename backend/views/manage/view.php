@@ -8,14 +8,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Officer */
+/* @var $model app\models\Manage */
 
 $this->title = $model->oid;
-$this->params['breadcrumbs'][] = ['label' => 'Officers', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Manages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="officer-view">
+<div class="manage-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -8,11 +8,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Officer */
+/* @var $model app\models\Manage */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="officer-form">
+<div class="manage-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

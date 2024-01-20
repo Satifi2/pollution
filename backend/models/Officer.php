@@ -10,21 +10,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "officer".
+ * This is the model class for table "manage".
  *
  * @property int $oid
  * @property string $oname
  * @property string|null $ocountry
  * @property string|null $odescription
  */
-class Officer extends \yii\db\ActiveRecord
+class Manage extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'officer';
+        return 'manage';
     }
 
     /**
@@ -56,10 +56,10 @@ class Officer extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return OfficerQuery the active query used by this AR class.
+     * @return ManageQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new OfficerQuery(get_called_class());
+        return new ManageQuery(get_called_class());
     }
 }

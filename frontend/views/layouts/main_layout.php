@@ -14,7 +14,7 @@
 	 <link rel="stylesheet" href="css/comment.css">
 	 <link rel="stylesheet" href="css/home.css?v=<%= System.currentTimeMillis()%>">
 	 <link rel="stylesheet" href="css/victim.css">
-	 <link rel="stylesheet" href="css/officer.css">
+	 <link rel="stylesheet" href="css/manage.css">
 	 <link rel="stylesheet" href="css/register.css">
 	 <link rel="stylesheet" href="css/damage.css">
 	 <link rel="stylesheet" href="css/signup_login.css">
@@ -70,7 +70,7 @@
 				   	<li class="with_ul"><a href="/yii2/frontend/web/index.php?r=site/about">资料</a>
 						<ul>
 							<li><a href="/yii2/frontend/web/index.php?r=news/index">新闻</a></li>
-							<li><a href="/yii2/frontend/web/index.php?r=officer/index">专家介绍</a></li>
+							<li><a href="/yii2/frontend/web/index.php?r=manage/index">专家介绍</a></li>
 							<li><a href="/yii2/frontend/web/index.php?r=damage/index">辐射数据</a></li>
 							<li><a href="/yii2/frontend/web/index.php?r=victim/index">排放情况</a></li>
 				   			<li><a href="/yii2/frontend/web/index.php?r=comment/index">评论</a></li>

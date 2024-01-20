@@ -9,7 +9,7 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 
-class OfficerForm extends Model
+class ManageForm extends Model
 {
     public $name;
     public $country;

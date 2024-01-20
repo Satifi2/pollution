@@ -452,11 +452,11 @@ AppAsset::register($this);
               </li>
               <li>
               <?php if(!Yii::$app->user->isGuest){ ?>
-                <a href="<?php echo Url::to(['officer/index']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> officer</a>
+                <a href="<?php echo Url::to(['manage/index']) ?>">
+                  <span class="glyphicon glyphicon-book"></span> manage</a>
                   <?php } else{?>
                   <a href="<?php echo Url::to(['site/login']) ?>">
-                  <span class="glyphicon glyphicon-book"></span> officer</a>
+                  <span class="glyphicon glyphicon-book"></span> manage</a>
                   <?php } ?>
               </li>
               <li>

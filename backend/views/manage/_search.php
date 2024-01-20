@@ -8,11 +8,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\OfficerSearch */
+/* @var $model backend\models\ManageSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="officer-search">
+<div class="manage-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
