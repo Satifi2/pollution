@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.team-section {
+    position: relative;
+    background: #0f0c29; /* Dark background to make the rainbow colors pop */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.team-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(145deg, #ff5e62, #ff9966, #ff5e62, #ff5e62, #ff9966, #ff5e62); /* Rainbow gradient effect */
+    border-radius: 50%;
+    transform: translate(-150px, -120px);
+    animation: spin 20s linear infinite; /* Added spin animation for dynamic effect */
+}
+
+@keyframes spin {
+    from {transform: translate(-150px, -120px) rotate(0deg);}
+    to {transform: translate(-150px, -120px) rotate(360deg);}
+}
+
+.team-box {
+    position: relative;
+    min-width: 150px;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-box-item {
+    position: relative;
+    min-width: 20%;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    backdrop-filter: blur(25px);
+}
+
+.team-box-item h3 {
+    color: #e0e0e0; /* Lighter text color for readability */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.team-box-item .team-box-list {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for list items */
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.team-box-item .team-box-list:hover {
+    background: rgba(255, 255, 255, 0.95); /* Almost white background on hover for a subtle change */
+    box-shadow: -15px 30px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(1.15) translateX(15px) translateY(-10px);
+    z-index: 1000;
+}
+
+.team-box-item .team-box-list .team-img-box {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.team-box-item .team-box-list .team-img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-box-item .team-box-list .team-box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.team-box-item .team-box-list .team-box-content .team-rank {
+    position: absolute;
+    right: -50px;
+    color: #1de9b6; /* Bright color for rank to stand out */
+    transition: 0.5s;
+    font-size: 2em;
+}
+
+.team-box-item .team-box-list .team-box-content .team-rank small {
+    font-weight: 500;
+    opacity: 0.25;
+}
+
+.team-box-item .team-box-list:hover .team-box-content .team-rank {
+    right: 5px;
+}
+
+.team-box-item .team-box-list .team-box-content h4 {
+    line-height: 1.2em;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.team-box-item .team-box-list .team-box-content p {
+    font-size: 0.75em;
+    transition: 0.5s;
+}
+
+.team-box-item .team-box-list:hover .team-box-content h4,
+.team-box-item .team-box-list .team-box-content p {
+    color: #333;
+}
+
+.team-list-father {
+    display: flex;
+}

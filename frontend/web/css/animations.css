@@ -1,0 +1,18 @@
+/**
+ * Team: NKUsavesea
+ * Coding by 林子淳 2114042, 20231215
+ * 简单的css动画
+ */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .officer-title {
+    animation: fadeIn 2s ease-in-out;
+  }

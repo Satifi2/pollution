@@ -1,0 +1,57 @@
+/**
+ * Team: NKUSaveSea
+ * Coding by 叶潇晗 2112120 , 20231223
+ * 排放页css
+ */
+.victim-container {
+    height: 700px;
+    width: 100%;
+}
+
+.victim-title {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    position: relative;
+    font-size: 14vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.victim-title::before {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 30vh;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 17%;
+    width: 0;
+    height: 100%;
+    color: rgba(99, 3, 255, 0.6);
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px, solid rgba(99, 3, 255, 0.6);
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+    filter: drop-shadow(0px 0px 10px rgba(99, 3, 255, 0.6)) blur(10px);
+}
+
+
+@keyframes animate {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}

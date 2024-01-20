@@ -1,0 +1,156 @@
+/**
+* Team: NKUsavesea
+* Coding by 林子淳 2114042, 20231215
+* comment动画效果
+*/
+/* 容器居中显示，调整宽度和边距 */
+.container {
+    display: block; /* 使用块级布局代替flex布局 */
+    max-width: 600px; /* 缩小最大宽度 */
+    margin: 20px auto; /* 增加上下边距 */
+    padding: 20px; /* 保持内边距 */
+    background: #fff; /* 设置背景色提高对比度 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+}
+
+/* 页面标题样式 */
+.comment-header {
+    font-size: 24px; /* 减小字体大小 */
+    color: #333; /* 深色字体提高对比度 */
+    margin-bottom: 20px; /* 增加底部边距 */
+}
+
+/* 分隔线样式 */
+.comment-hr {
+    border-top: 1px solid #eee; /* 浅色分隔线 */
+    margin-bottom: 20px; /* 增加底部边距 */
+}
+
+/* 用户信息样式 */
+.comment-usr-info {
+    font-size: 14px; /* 调整字体大小 */
+    color: #666; /* 深色字体提高对比度 */
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease; /* 背景颜色变化的过渡效果 */
+}
+
+.comment-usr-name {
+    margin-left: 5px; /* 与楼层号的间隔 */
+    color: #3498db; /* 给人名加上颜色 */
+    font-weight: bold; /* 如果需要，可以加粗 */
+}
+
+.comment-usr-date {
+    margin-left: auto; /* 推到右边 */
+    color: #95a5a6; /* 日期的颜色，根据需要修改 */
+}
+
+/* 留言内容样式 */
+.comment-content {
+    margin: 10px 0; /* 调整上下边距 */
+    padding: 15px; /* 内边距 */
+    background: #f7f7f7; /* 更浅的背景色 */
+    border: 1px solid #ddd; /* 边框 */
+    font-size: 16px; /* 增大字体大小 */
+}
+/* 输入框样式 */
+.comment-input {
+    margin: 10px 0; /* 调整上下边距 */
+    padding: 10px; /* 调整内边距 */
+    background: #ffffff; /* 设置白色背景 */
+    border: 1px solid #d1d1d1; /* 设置边框颜色为浅灰色 */
+    font-size: 14px; /* 设置合适的字体大小 */
+    width: 100%; /* 宽度调整为100%，依赖于父容器宽度 */
+    box-sizing: border-box; /* 包括边框和内边距在宽度内 */
+    resize: none; /* 禁用调整大小功能 */
+}
+
+/* 文本域样式 */
+.comment-textarea {
+    margin: 10px 0; /* 调整上下边距 */
+    padding: 10px; /* 调整内边距 */
+    background: #ffffff; /* 设置白色背景 */
+    border: 1px solid #d1d1d1; /* 设置边框颜色为浅灰色 */
+    font-size: 14px; /* 设置合适的字体大小 */
+    width: 100%; /* 宽度调整为100%，依赖于父容器宽度 */
+    height: auto; /* 高度自动，根据内容增长 */
+    min-height: 50px; /* 最小高度 */
+    box-sizing: border-box; /* 包括边框和内边距在宽度内 */
+    resize: vertical; /* 允许垂直方向上调整大小 */
+}
+
+/* 调整提交按钮样式，使其与输入框对齐 */
+.comment-btn {
+    margin-top: 10px; /* 顶部边距与输入框一致 */
+    padding: 10px 15px; /* 内边距 */
+    width: 100%; /* 宽度为100%，以匹配输入框 */
+    border: none; /* 无边框 */
+    background-color: #3498db; /* 按钮背景颜色 */
+    color: #ffffff; /* 文字颜色 */
+    cursor: pointer; /* 鼠标悬停指针变化 */
+    font-size: 14px; /* 字体大小 */
+    border-radius: 4px; /* 轻微圆角效果 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 简单的阴影效果 */
+}
+
+/* 鼠标悬停在按钮上的效果 */
+.comment-btn:hover {
+    background-color: #2980b9; /* 深一点的颜色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 加深阴影效果 */
+}
+
+/* 留言统计样式 */
+.comment-stats {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #57606f; /* 统计信息颜色 */
+}
+
+/* 发表评论标题样式 */
+.comment-header {
+    margin-top: 20px; /* 增加更大的上边距 */
+    text-align: center; /* 居中对齐 */
+    animation: popIn 1s ease-out, colorCycle 6s ease-in-out infinite; /* 应用两个动画 */
+}
+
+/* 初始弹出动画 */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 颜色循环动画 */
+@keyframes colorCycle {
+    0%, 100% {
+        color: #FF6347; /* 番茄色 */
+    }
+    20% {
+        color: #FFD700; /* 金色 */
+    }
+    40% {
+        color: #90EE90; /* 亮绿色 */
+    }
+    60% {
+        color: #00BFFF; /* 深天蓝色 */
+    }
+    80% {
+        color: #1E90FF; /* 道奇蓝 */
+    }
+}
+/* 楼层样式 */
+.comment-floor {
+    font-weight: bold;
+    margin-right: 10px; /* 右边距 */
+}

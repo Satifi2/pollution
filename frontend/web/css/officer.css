@@ -1,0 +1,131 @@
+/**
+* Team: NKUsavesea
+* Coding by 林子淳 2114042, 20231215
+* 简单的css动画
+*/
+
+@keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(-10deg);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1) rotate(5deg);
+    }
+    70% {
+      transform: scale(0.9) rotate(-3deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+  }
+  
+  .officer-title {
+    display: inline-block; /* allows transform to work */
+    animation: popIn 1s ease forwards;
+  }
+
+.officer-shell {
+    height: auto;
+    overflow-x: hidden;
+    perspective: 1px;
+    padding: 2rem 0; /* Added padding for better spacing */
+    background: #fff; 
+}
+
+.officer-title {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    font-size: 3rem; /* Adjusted for better readability */
+    color: #fff; /* White color for better contrast */
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.officer-img {
+    max-height: 30vh; /* Adjust size to fit content area */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Add shadow for depth */
+}
+
+.officer-header {
+    font-size: 1.25rem; /* Slightly larger for readability */
+    color: #f0f0f0; /* Light grey for readability */
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.officer-img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem; /* Added margin for spacing */
+}
+
+.officer-intro {
+    margin: 1rem 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd; /* Lighter grey for readability */
+    text-align: left; /* Align text for standard reading */
+    text-indent: 2em; /* Added indent for paragraphs */
+}
+
+.officer-footer {
+    margin: 1rem 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd; /* Lighter grey for readability */
+    text-align: left; /* Align text for standard reading */
+    text-indent: 2em; /* Added indent for paragraphs */
+}
+
+/* 增加容器的宽度以适应更多的内容 */
+.officer-item {
+    width: 80%; /* 或者具体的宽度，如300px */
+    margin: 0 auto; /* 居中显示 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微的阴影增加立体感 */
+    border-radius: 4px; /* 轻微的圆角效果 */
+    padding: 20px; /* 内边距 */
+    background-color: #fff; /* 白色背景提高可读性 */
+    margin-bottom: 20px; /* 和下一个元素的距离 */
+}
+
+.officer-img-div {
+    text-align: center; /* 图片居中显示 */
+    margin-bottom: 20px; /* 和下面的文本保持距离 */
+}
+
+.officer-img {
+    width: 150px; /* 设置图片宽度 */
+    height: auto; /* 高度自动 */
+    border-radius: 50%; /* 圆形头像 */
+    border: 3px solid #eee; /* 边框颜色，根据背景调整 */
+}
+
+.officer-name {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #333; /* 字体颜色深一些，增加对比度 */
+    font-weight: bold; /* 名字加粗 */
+    text-align: center; /* 文本居中 */
+}
+
+.officer-country {
+    font-style: italic;
+    margin-top: 5px;
+    text-align: center; /* 国籍也居中 */
+    color: #555; /* 颜色稍浅，区分度 */
+}
+
+.officer-description {
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 1.6; /* 增加行高提高可读性 */
+    text-align: justify; /* 文本两端对齐 */
+}

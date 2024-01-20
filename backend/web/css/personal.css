@@ -1,0 +1,146 @@
+/**
+* Team: nkusavesea
+* Coding by 林子淳 2114042, 20231223
+* 作业页面设计
+*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.personal-section {
+    position: relative;
+    background: #202033; /* Slightly darker background for more contrast */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.personal-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(#007bff, #6610f2); /* New gradient colors */
+    border-radius: 50%;
+    transform: translate(-150px, -120px);
+}
+
+.personal-box {
+    position: relative;
+    min-width: 150px;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.08); /* Slightly more transparent */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12); /* Slightly darker shadow */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Less prominent border */
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+}
+
+.personal-box-item {
+    position: relative;
+    min-width: 20%;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.08); /* Slightly more transparent */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12); /* Slightly darker shadow */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Less prominent border */
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    backdrop-filter: blur(25px);
+}
+
+.personal-box-item h3 {
+    color: #4d38c0; /* Lighter shade of text color for better readability */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.personal-box-item .personal-box-list {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.15); /* Slightly darker for contrast */
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.personal-box-item .personal-box-list:hover {
+    background: #f8f9fa; /* Light background on hover for a subtle change */
+    box-shadow: -15px 30px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(1.15) translateX(15px) translateY(-10px);
+    z-index: 1000;
+}
+
+ 
+ .personal-box-item .personal-box-list .personal-img-box {
+     position: relative;
+     width: 60px;
+     height: 60px;
+     border-radius: 10px;
+     overflow: hidden;
+     margin-right: 10px;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-img-box img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-box-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     color: #fff;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-box-content .personal-rank {
+     position: absolute;
+     right: -50px;
+     color: #03a9f4;
+     transition: 0.5s;
+     font-size: 2em;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-box-content .personal-rank small {
+     font-weight: 500;
+     opacity: 0.25;
+ }
+ 
+ .personal-box-item .personal-box-list:hover .personal-box-content .personal-rank {
+     right: 5px;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-box-content h4 {
+     line-height: 1.2em;
+     font-weight: 600;
+     transition: 0.5s;
+ }
+ 
+ .personal-box-item .personal-box-list .personal-box-content p {
+     font-size: 0.75em;
+     transition: 0.5s;
+ }
+ 
+ .personal-box-item .personal-box-list:hover .personal-box-content h4,
+ .personal-box-item .personal-box-list .personal-box-content p {
+     color: #333;
+ }

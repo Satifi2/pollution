@@ -1,0 +1,193 @@
+/**
+ * Team: NKUsavesea
+ * Coding by 林子淳 2114042, 20231218
+ * 所有有关登录注册的界面统一css风格
+ */
+.site-signup {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center; /* 让所有文本居中 */
+}
+
+
+/* 调整标签和输入框的对齐和样式 */
+.site-signup .form-group {
+    margin-bottom: 25px;
+}
+
+.site-signup label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.site-signup input[type='text'],
+.site-signup input[type='password'],
+.site-signup input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 调整提交按钮的样式 */
+.site-signup .btn-primary {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+/* 动画效果 */
+@keyframes rainbow-text {
+    0% { color: #ff5555; }
+    20% { color: #ffcc55; }
+    40% { color: #55ff55; }
+    60% { color: #55ffff; }
+    80% { color: #5555ff; }
+    100% { color: #ff55ff; }
+  }
+  
+  /* 应用动画到标题 */
+  .site-signup h1 {
+      animation: rainbow-text 5s linear infinite;
+      font-size: 2.5rem;
+  }
+
+
+  /* 登录页面的样式，复用注册页面的样式规则 */
+.site-login {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center; /* 文本居中 */
+}
+
+/* 调整标签和输入框的样式，与注册页面保持一致 */
+.site-login .form-group {
+    margin-bottom: 25px;
+}
+
+.site-login label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.site-login input[type='text'],
+.site-login input[type='password'],
+.site-login input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 调整登录按钮的样式，与注册按钮保持一致 */
+.site-login .btn-primary {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+/* 应用动画效果到登录页面标题，与注册页面标题保持一致 */
+.site-login h1 {
+    animation: rainbow-text 5s linear infinite;
+    font-size: 2.5rem;
+}
+
+.site-request-password-reset {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Adjust label and input styles */
+.site-request-password-reset .form-group {
+    margin-bottom: 25px;
+}
+
+.site-request-password-reset label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.site-request-password-reset input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Adjust the submit button style */
+.site-request-password-reset .btn-primary {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+/* Apply the same animation effect to the page title */
+.site-request-password-reset h1 {
+    animation: rainbow-text 5s linear infinite;
+    font-size: 2.5rem;
+}
+
+
+.site-resend-verification-email {
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Reuse the same styles as .site-signup for consistency */
+.site-resend-verification-email .form-group {
+    margin-bottom: 25px;
+}
+
+.site-resend-verification-email label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.site-resend-verification-email input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.site-resend-verification-email .btn-primary {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+/* Apply the same animation effect to the page title */
+.site-resend-verification-email h1 {
+    animation: rainbow-text 5s linear infinite;
+    font-size: 2.5rem;
+}

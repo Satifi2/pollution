@@ -1,0 +1,149 @@
+/**
+ * Team: NKUsavesea
+ * Coding by 张丽婷 2111190, 2023/12/19
+ * 新闻页css
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+.lunbo {
+    width: 100%;
+}
+
+.lb-content {
+    width: 1000px;
+    height: 350px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #ffd8d4;
+}
+
+
+.lb-item {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+.lb-item.active {
+    opacity: 1;
+}
+
+.lb-img {
+    width: 500px;
+    height: 350px;
+}
+
+.text {}
+
+.header {
+    margin: 15px 20px;
+    font-family: 楷体, 黑体, 微软雅黑, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.name {
+    font-size: 24px;
+    color: #a978dd;
+    font-family: 楷体, 黑体, 微软雅黑, sans-serif;
+}
+
+.country {
+    margin-left: 20px;
+    padding-top: 10px;
+    font-size: 14px;
+    height: 40px;
+    color: #c9b8db;
+    font-family: 楷体, 黑体, 微软雅黑, sans-serif;
+}
+
+.description {
+    padding: 20px;
+    color: #aa93c2;
+    font-size: 20px;
+    width: 400px;
+    font-family: 楷体, 黑体, 微软雅黑, sans-serif;
+    line-height: 20px;
+    text-indent: 40px;
+}
+
+#btn-left {
+    width: 30px;
+    height: 69px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    line-height: 69px;
+    padding-left: 5px;
+    z-index: 10;
+    /*始终显示在图片的上层*/
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-60%);
+    /*使按钮向上偏移居中对齐*/
+    cursor: pointer;
+    opacity: 0;
+    /*平时隐藏*/
+}
+
+.lunbo:hover #btn-left {
+    /*鼠标滑入，显示图标*/
+    opacity: 1;
+}
+
+#btn-right {
+    width: 26px;
+    height: 69px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    line-height: 69px;
+    padding-left: 5px;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-60%);
+}
+
+.lunbo:hover #btn-right {
+    opacity: 1;
+}
+
+#circle {
+    height: 20px;
+    display: flex;
+    position: absolute;
+    bottom: 35px;
+    right: 25px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    margin: 5px;
+}
+
+.white {
+    background-color: #FFFFFF;
+}
