@@ -1,402 +1,559 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- 主机： 127.0.0.1:3306
--- 生成日期： 2023-12-24 12:40:03
--- 服务器版本： 10.4.32-MariaDB
--- PHP 版本： 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- 数据库： `yii2`
---
-
--- --------------------------------------------------------
-
---
--- 表的结构 `background`
---
-
-DROP TABLE IF EXISTS `background`;
-CREATE TABLE `background` (
-  `Bid` int(11) NOT NULL,
-  `Bname` varchar(255) NOT NULL,
-  `Btime` varchar(255) NOT NULL,
-  `Ber` varchar(255) NOT NULL,
-  `Bintro` text NOT NULL,
-  PRIMARY KEY (`Bid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `background`
---
-
-INSERT INTO `background` (`Bid`, `Bname`, `Btime`, `Ber`, `Bintro`) VALUES
-(1, '日本核污染水第一轮共排放7788立方米', '2023年8月24日下午1点3分', '日本福岛核电站', '日本核污染水第一轮共排放7788立方米。11日，日本东京电力公司在官网公布的信息显示，福岛第一核电站核污染水首轮排海从当地时间8月24日下午1点3分启动，到11日中午12点15分结束，首轮累计排放量为7788立方米。'),
-(2, '又来了！日本开始第二轮核污染水排海', '2023年10月5日', '日本政府，东京电力公司', '当地时间5日，日本正式开始排放第二批次的福岛核污染水，预计将持续17天。此次的排放量与第一批次大致相同，仍为7800吨左右。大量核污染水持续排入太平洋的同时，又出现了新的问题——因排污产生的垃圾面临“无处安放”的境地。对于愈发严重的核污染危机，日本政府和东京电力公司却装聋作哑，一意孤行，其在日本国内外的信誉度正被严重透支。'),
-(3, '7800吨！日本开始第三轮核污染水排海', '2023年11月2日', '日本东京电力公司', '11月2日，日本东京电力公司启动第三批福岛核污染水排海，预计持续至11月20日，计划排放约7800吨核污染水。日本以邻为壑、狭隘自私的行径，必然会对全球海洋生态和人类福祉造成不可逆转且深远广泛的影响。毋庸置疑，源自政治短视的人为灾难将成为未来海洋生态安全的新挑战、新议题。'),
-(4, '日本第四轮核污染水排海将于2024年2月下旬开始', '2024年2月下旬', '日本东京电力公司', '据日本广播协会（NHK）当地时间18日报道，东京电力公司当天称，福岛第一核电站第四轮核污染水排海将于2024年2月下旬开始，排海总量预计为7800吨。');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `comment`
---
-DROP TABLE IF EXISTS `comment`;
-CREATE TABLE `comment` (
-  `cid` int(11) NOT NULL,
-  `cdate` datetime DEFAULT NULL,
-  `ccomment` varchar(255) DEFAULT NULL,
-  `cuser` varchar(255) NOT NULL,
-  PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `comment`
---
-
-INSERT INTO `comment` (`cid`, `cdate`, `ccomment`, `cuser`) VALUES
-(1, '2023-12-17 22:02:13', '这个网站不错的，可以尝试使用！', 'djx'),
-(2, '2023-12-13 22:02:53', '谁敢排放核污水就是与我过不去！', 'yxh'),
-(3, '2023-12-16 22:03:33', '原来有的政客也是睁眼说瞎话。', 'zlt'),
-(4, '2023-12-17 15:03:36', '哈哈哈哈666', 'dfv'),
-(5, '2023-12-24 03:30:05', 'abc\r\n', 'yi'),
-(6, '2023-12-24 10:42:28', '567', 'yi');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `emissions`
---
-DROP TABLE IF EXISTS `emissions`;
-CREATE TABLE `emissions` (
-  `Oid` int(11) NOT NULL,
-  `Onumber` int(11) NOT NULL,
-  `Otime` date NOT NULL,
-  PRIMARY KEY (`Oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `emissions`
---
-
-INSERT INTO `emissions` (`Oid`, `Onumber`, `Otime`) VALUES
-(1, 7788, '2023-08-24'),
-(2, 7810, '2023-10-05'),
-(3, 7753, '2023-11-02'),
-(4, 7800, '2023-12-14');
-
--- -------------------------------------------------------
-
---
--- 表的结构 `group`
---
-DROP TABLE IF EXISTS `group`;
-CREATE TABLE `group` (
-  `gid` int(11) NOT NULL,
-  `gname` varchar(255) DEFAULT NULL,
-  `gdate` datetime DEFAULT NULL,
-  `gschool` varchar(255) DEFAULT NULL,
-  `gdescription` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`gid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `group`
---
-
-INSERT INTO `group` (`gid`, `gname`, `gdate`, `gschool`, `gdescription`) VALUES
-(1, 'nkusavesea', '2023-12-18 22:22:05', 'NKU', 'We are family!');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `interpretations`
---
-DROP TABLE IF EXISTS `interpretations`;
-CREATE TABLE `interpretations` (
-  `Exid` int(11) NOT NULL,
-  `Exname` varchar(255) NOT NULL,
-  `Exsourse` varchar(255) NOT NULL,
-  `Exherf` varchar(255) NOT NULL,
-  `Exintro` text NOT NULL,
-  PRIMARY KEY (`Exid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `links`
---
-
-DROP TABLE IF EXISTS `links`;
-CREATE TABLE `links` (
-  `Lid` int(11) NOT NULL,
-  `Lname` varchar(255) NOT NULL,
-  `Lherf` varchar(255) NOT NULL,
-  `Lintro` text NOT NULL,
-  PRIMARY KEY (`Lid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `links`
---
-
-INSERT INTO `links` (`Lid`, `Lname`, `Lherf`, `Lintro`) VALUES
-(1, '核废水和核污染水有什么区别？', 'https://www.bilibili.com/video/BV1Hh4y127hh', '核污染水≠核废水。这个视频解释了：核废水是在核反应会产生大量热量，需要水进入冷却装置来降低温度的水，但这些水不会与反应堆直接接触，是相对安全的废水。而核污染水（Nuclear contaminated water)是 2011 年日本福岛核电站核泄漏后，为冷却核射时直接灌入的海水，是与核辐射源头直接接触的被污染水体，含有的放射性物质种类和浓度都比核废水高。在 2021 年日本提出排海计划后，他们一直声称“我们的水是经过 ALPS 处理的‘处理水’，不是什么核污染水”。https://www.bilibili.com/video/BV1Hh4y127hh\r\n'),
-(2, '日本核污染水排海，海外评论翻译', 'https://www.bilibili.com/video/BV1pP411W7eB', '外网对于核废水排放的相关言论 https://www.bilibili.com/video/BV1pP411W7eB'),
-(3, '日本核污染水排海启动瞬间画面', 'https://www.bilibili.com/video/BV1m14y117iV', '2023年8月25日，日本东京电力公司公布此前一天福岛第一核电站核污染水排海正式启动瞬间相关画面。'),
-(4, '核污染水！日本大臣终于说了实话', 'https://www.bilibili.com/video/BV1k14y1y7zU', '日本农林水产大臣野村哲郎在2023年8月31号在回答记者提问时，不小心说漏嘴，把福岛第一核电站向海洋排放的水称作“核污染水”。当天日本首相岸田文雄要求他收回发言并道歉。'),
-(5, '渔港空无一人！总台记者实地探访福岛现状', 'https://www.bilibili.com/video/BV1Nu411E7QU', '北京时间8月24日中午12点，日本福岛第一核电站启动核污染水排海。记者来到距离福岛第一核电站6.5公里处，实地检测当地核辐射值。东京电力公司称，根据计划排海时间至少要持续30年，将会影响整个太平洋乃至全球海域。日本强推核污染水排海的做法引发多方质疑和反对。');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `members`
---
-DROP TABLE IF EXISTS `members`;
-CREATE TABLE `members` (
-  `mid` int(11) NOT NULL,
-  `mname` varchar(255) DEFAULT NULL,
-  `mdescription` varchar(255) DEFAULT NULL,
-  `mgroup` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`mid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `members`
---
-
-INSERT INTO `members` (`mid`, `mname`, `mdescription`, `mgroup`) VALUES
-(1, '杨淇', '我就是我，颜色不一样的烟火。', 'nkusavesea'),
-(2, '叶潇晗', '天行健，君子以自强不息。', 'nkusavesea'),
-(3, '张丽婷', '水能载舟，亦能覆舟', 'nkusavesea'),
-(4, '林子淳', '一川烟草，满城风絮，梅子黄时雨。', 'nkusavesea');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `news`
---
-DROP TABLE IF EXISTS `news`;
-CREATE TABLE `news` (
-  `Nid` int(11) NOT NULL,
-  `Ntitle` varchar(255) DEFAULT NULL,
-  `Nauthor` varchar(255) DEFAULT NULL,
-  `Ndate` datetime DEFAULT NULL,
-  `Ncontent` text DEFAULT NULL,
-  PRIMARY KEY (`Nid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `news`
---
-
-INSERT INTO `news` (`nid`, `Ntitle`, `Nauthor`, `Ndate`, `Ncontent`) VALUES
-(1, '一周两现“死鱼潮”，日本极力撇清：和核污染水排海无关！\r\n', '新民晚报\r\n', '2023-12-18 18:53:00', '从外界对于此事的反应不难看出，核污染水排海的隐患仍旧令国际社会忧心不已。\r\n绵延的海岸线上密布着成吨的死鱼尸体，空气中混合着腐烂带来的腥臭味。\r\n最近一段时间，日本多地海边出现了极为反常的现象。据央视新闻等央媒报道，近日，日本三重县志摩市波切渔港发现大量死鱼冲上岸边，死鱼多到渔船寸步难行。这是继北海道12月7日出现大量死鱼后，日本海岸一周内第二次出现类似情况。\r\n日本海岸频繁发生死鱼成吨事件引发了外界的高度关注。在深感蹊跷的同时，一些舆论将此与福岛核污染水排海一事联系在了一起。虽然眼下这样的联想并无科学依据，但其背后所折射的，正是人们对日本“排污入海”的恐惧和担忧……\r\n又现大量死鱼\r\n这个冬天，日本多地往日清冷静谧的海边，出现了大量随着海浪被冲上岸边的死鱼尸体。\r\n在日本三重县志摩市波切渔港，成片漂浮在海面或被冲上海岸的死鱼，让路过的渔民深感恐惧。“第一次看见这么多的死鱼，不知道未来还会不会有更多鱼类死亡。”一名当地渔民忧心忡忡地说，“这是不是意味着海洋生态系统已经发生变化。”\r\n据报道，本月中旬，波切渔港发现大量腐烂并散发出恶臭的死鱼。当地政府甚至动用了挖掘机等重型机械来回收死鱼。截至目前，回收的死鱼已超过85吨。\r\n日本海岸出现大批死鱼不是第一次。当地时间7日上午，日本北海道函馆市海岸，大量沙丁鱼尸体被冲上沙滩。\r\n一名目击者用无人机拍摄的画面显示，一片海滩上铺满了死鱼，长度约有1公里，还有很多死鱼漂浮在海面上。由于死鱼数量巨大，海滩和水面都变成了银白色。\r\n引发外界质疑\r\n一周时间内日本海岸接连出现离奇现象，引发了舆论的高度关注。有媒体直接将此与日本“排污入海”相关联，并发出质疑：“在日本海滩成千上万的死鱼被冲刷上岸，从福岛核电站排放出的核污染水，是否对当地生态系统造成严重破坏？”\r\n对此，日本外务省发言人小林麻纪回应称：“这一报道影射沙丁鱼被冲上海岸与处理水排放有关，缺乏科学依据，极为不妥，日本政府将就此采取妥善措施。”也有日本官员急忙撇清关系称，鱼可能死于缺氧，与福岛核电站核污染水排海无关。\r\n公开资料显示，沙丁鱼主要分布在亚太地区沿海，从日本到南海、越南均有其踪迹。它们通常成群结队，尤其在春季或春夏之交活跃。而沙丁鱼是一种对水质要求很高的鱼类，一旦海洋环境不适合生存，它们就会大批量死亡。\r\n一些日本专家认为，眼下还没有直接证据表明日本海岸鱼类的大量死亡与核污染水排海有关，海水温度的大幅度下降以及被海豚等猎食者逼往浅滩而缺氧窒息都有可能成为原因。\r\n担忧难以消弭\r\n尽管原因依旧成谜，但从外界对于此事的反应不难看出，核污染水排海的隐患仍旧令国际社会忧心不已。\r\n从8月24日开始至今，日本政府一共进行了3次核污水排海，累计排放量超过2.3万吨。预计第4轮核污水排放入海，将于明年继续。\r\n一直以来，多国及多个国际组织相关人士，都对日本强推核污染水排海计划提出质疑和批评。\r\n今年5月民调显示，超85%韩国民众反对日本排污。6月，约3000名韩国渔民集会反对日本将福岛核污染水排放入海。俄罗斯常驻维也纳联合国副代表乌斯蒂诺夫此前表示，日方在这一问题上缺乏透明度，担忧其强推核污染水排海计划将影响全球生态系统。\r\n最新民调显示，日本首相岸田文雄所领导内阁的支持率继续走低，比11月中旬下跌5个百分点至16％，从“危险水域”跌入“下台水域”，不支持率创下70多年来的最高纪录。\r\n有分析认为，“黑金”丑闻持续发酵让日本民众对岸田的领导力充满质疑，而国内经济未有起色、防卫费持续走高、以及不顾国际社会反对执意“排污入海”等，无疑让岸田持续低迷的支持率雪上加霜。'),
-(2, '福岛第一核电站2号机组一名废炉作业人员遭放射性物质污染\r\n', '澎湃新闻\r\n', '2023-12-11 18:55:00', '据央视新闻12月11日报道，日本东京电力公司当日发布消息称，确认到一名在福岛第一核电站2号机组进行废炉作业的工作人员被放射性物质污染，存在内照射的可能性。\r\n\r\n报道称，内照射即人通过呼吸或其他方式令含有放射性元素的物质进入身体，射线会在人体内部直接作用在器官上。\r\n\r\n11月20日，日本福岛核电站第三批次核污水排放结束，从8月24日正式开启排污，不到三个月的时间，已有超2.3万吨核污水流入太平洋。\r\n\r\n在这期间，福岛核电站员工被核污水辐射、排放设备发生故障等问题不断。同时，由于核污水的巨大危害，日本国内外反对声浪此起彼伏。尽管如此，日本政府和东京电力公司仍坚持排污。\r\n\r\n核污水排放开始前，除了将核污水混淆为“处理水”，日方还大肆吹嘘东电的管理流程，称排放开始后会按既定流程和计划“安全排放”。\r\n\r\n但事实却与日本政府描述的截然相反。10月25日，东电称，福岛第一核电站进行核污水处理工作的4名作业人员被核污水溅射，2人全身多处遭辐射被紧急送医。而对于事故中溅射出的废液总量，东电先是称在100毫升左右，后又改口为数升左右，前后差距达几十倍。'),
-(3, '国际热评：超2.3万吨核污水全部入海 日本，请住手！\r\n', '中国新闻网\r\n', '2023-11-20 16:10:16', '中新网11月20日电 (张奥林)11月20日，福岛核电站第三批次核污水排放结束，从8月24日正式开启排污，不到三个月的时间，已有超2.3万吨核污水流入太平洋。\r\n\r\n　　在这期间，福岛核电站员工被核污水辐射、排放设备发生故障等问题不断。同时，由于核污水的巨大危害，日本国内外反对声浪此起彼伏。尽管如此，日本政府和东京电力公司仍坚持排污。\r\n\r\n　　核污水排放开始前，除了将核污水混淆为“处理水”，日方还大肆吹嘘东电的管理流程，称排放开始后会按既定流程和计划“安全排放”。\r\n\r\n　　但事实却与日本政府描述的截然相反。10月25日，东电称，福岛第一核电站进行核污水处理工作的4名作业员被核污水溅射，2人全身多处遭辐射被紧急送医。而对于事故中溅射出的废液总量，东电先是称在100毫升左右，后又改口为数升左右，前后差距达几十倍。\r\n\r\n　　不仅如此，东电称，第二批核污水排放期间，用于输送核污水的水泵压力一度降低，原因是水中含有的锈附着在过滤器上，引发了堵塞。\r\n\r\n　　接二连三出现的问题，也引起日本原子能规制委员会的高度关注，该机构也将矛头指向东电。有委员质疑：“东电完全应该对废液溅射问题有预案，作业开始前到底有没有落实安全检查？”另一名委员直接指出：“这很明显是作业管理上的失败。”\r\n\r\n　　日本原子能规制委员会委员长山中伸介更是表示：“东电实际上已经违反了核污水排放的实施规定。”\r\n\r\n　　日本《朝日新闻》一针见血地指出：日本民众对东电的不信任，比其核污染水储存罐还深。\r\n\r\n　　不仅在日本国内，国际社会同样密切关注这一问题。当地时间11月10日，在库克群岛举办的太平洋岛国论坛首脑会议发布了共同声明，声明中明确写有“首脑对太平洋核污染潜在威胁的严重关切”。\r\n\r\n　　此外，包括中国、俄罗斯在内的多方，也持续呼吁日本重新审视排污计划。\r\n\r\n　　尽管问题和质疑声不断，但日本政府仍未打算悬崖勒马，反而大肆宣扬核污水无害论，企图继续营造“排污正义”。\r\n\r\n　　有数据显示，在正式排污开始前，核污染水已存到了130万吨。按日方计划，要把核污染水全部排完，至少需要30年。\r\n\r\n　　东电这样一家劣迹斑斑的企业，如何能够确保在长达30年甚至更久的排放管理中，做到安全可靠？日方宣称的“安全、透明”的排海计划又如何让人放心？\r\n\r\n　　对于日方而言，当务之急是彻底搞清东电在排污流程中的种种问题，并借此机会重新审视排污计划，以全球海洋环境和全人类的健康安全为前提，及时停止排污，不要在错误的道路上越走越远。'),
-(4, '日本又现大量沙丁鱼死亡！网友疑与核污水排放有关，专家解读\r\n', '环球时报\r\n', '2023-12-08 13:54:00', '据海客新闻报道：中新网援引日本电视台消息，当地时间12月7日上午，日本北海道函馆市海岸有大量沙丁鱼被冲上沙滩，“鱼浪”蔓延1公里，目前鱼类死亡原因不明。\r\n据日媒公布的画面显示，密密麻麻的沙丁鱼尸体随着海浪涌上沙滩，如同“鱼浪”。当地居民表示，第一次见到这么多沙丁鱼被冲上海岸，还有居民表示要把鱼捡回去吃。\r\n报道称，沙丁鱼尸体中还混杂着鲭鱼，鱼类尸体大约蔓延了1公里，所及之处几乎没有落脚的空隙。目前，相关人员正在进行详细调查，并将讨论处理方法。\r\n此前也有多地上百吨沙丁鱼死亡\r\n另据央视网消息：据全日本新闻网报道，当地时间10月18日，日本雄本县一渔港内出现大量死去的沙丁鱼，密密麻麻铺满水面，场面骇人，截至10月19日，清理工作仍在进行，预计被清理的沙丁鱼将重达90吨。\r\n日本水产专家初步判断，这些沙丁鱼一周前就已陆续涌入这处渔港，推测是被追赶至这里后，因水温等因素导致最终缺氧而死。但造成大量沙丁鱼进行渔港的原因尚不清楚。\r\n另外，长崎县一处渔港也报告死亡大量沙丁鱼。\r\n沙丁鱼死亡或与日本核污水排海有关？\r\n上述沙丁鱼大量死亡的事件，引发网友广泛关注。有许多网友质疑，这可能与日本持续排放核污水有关。\r\n据中新网10月26日电：日本放送协会(NHK)报道，10月26日，东京电力公司发布消息称，福岛核电站第三批核污水将从11月2日开始排放。\r\n据报道，第三批排放量与前两次相同，约为7800吨。东电称，如果排放设备和气象条件都没问题，将按计划于11月2日至11月20日期间进行排放。\r\n日本此前已进行了两轮核污水排放，时间分别在8月24日至9月11日以及10月5日至10月23日，累计排放量已超过1.5万吨。\r\n东电计划在2023年内分四次排放3.12万吨核污水。要将现存核污水全部排完，需要至少30年时间。\r\n专家：沙丁鱼群居易被大鱼捕食追赶\r\n对于上述网友的担心，12月8日，中国海洋大学海洋渔业系一位教授告诉极目新闻记者，他也看到了上述新闻，鱼类死亡的原因需要详细调查才能得出可信的结论。\r\n这位教授表示，沙丁鱼有群居的特性，是大型鱼类的捕食对象，属于近海鱼种，分布比较广泛，若被大型鱼类追逐捕食，有可能出现成群结队逃到岸边造成死亡的现象。\r\n“不过，不管沙丁鱼死亡与核污水有没有关系，日本都不应核排放核污水，连他们自己国家的渔民都强调反对的！”这位教授强调说。\r\n日本民众冒雨抗议核污染水排海（来源：中新社）\r\n外交部发言人汪文斌曾介绍：2015年，日本政府在给福岛县渔业联合会的书面文件中郑重承诺，没有得到利益攸关方的理解前，不会对核污染水采取任何处置措施。时至今日，包括福岛县渔业组织在内的大量日本民众依然强烈反对排海决定。日本共同社今年8月20日最新民调显示，88.1%的受访者担心排海计划损害日本形象和潜在经济利益，81.9%的受访者认为日本政府的解释不充分。\r\n如今，日本排放核污水已经三个多月了。11月23日，外交部发言人毛宁在回答记者提问时表示，中方反对福岛核污染水排海的立场是一贯、明确的。习近平主席在美国会见日本首相岸田文雄时指出，日本福岛核污染水排海事关人类健康、全球海洋环境和国际公共利益，日方应当严肃对待国内外的合理关切，本着负责任和建设性的态度妥善处理。双方同意本着建设性的态度，通过磋商谈判，找到解决福岛核污染水排海问题的合适途径。\r\n毛宁强调，随着越来越多的福岛核污染水排入大海，国际社会迫切要求建立长期有效的国际监测安排，日方应当以严肃认真的态度回应国际社会关切，以负责任方式处置核污染水，全面配合建立有日本周边邻国等利益攸关方实质性参与、长期有效的国际监测安排，防止核污染水排海造成不可挽回的后果。'),
-(5, '日本启动第二轮排海前准备工作 预计排放约7800吨核污水\r\n', '中国新闻网\r\n', '2023-10-03 17:00:00', '中新网10月3日电 据日本共同社报道，东京电力公司3日启动了福岛第一核电站核污染水第二轮排海前准备工作。\r\n据报道，测定即将排入海洋的核污染水中的氚浓度，如果浓度符合其所谓的“标准”，将于5日正式开始第二轮核污染水排海。\r\n报道称，第二轮排放的核污染水总量预计仍将在7800吨左右，与第一轮7788吨核污染水排放量大致相同，排放周期约为17天。\r\n报道介绍，截至9月21日，福岛第一核电站内约有134万吨核污染水，达到储罐容量的约占98%，并计划于2023年分四次，排放共计约3.12万吨核污染水。\r\n据此前报道，尽管排海决定遭到日本国内外强烈反对，日本政府和东京电力公司仍于8月24日启动了福岛第一核电站核污染水的排海，第一轮排海于9月11日结束。'),
-(6, '内外抗议声不断 日方应配合建立长期有效国际监测安排\r\n', '法治日报\r\n', '2023-11-27 21:32:11', '11月20日，东京电力公司(以下简称东电)发布消息称，已经完成第三轮核污染水排放，第四轮将在明年初实施。按照计划，东电在2024年3月底前共进行四轮排放，共计排放3.12万吨核污染水。自8月24日正式启动核污染水排海以来，日本国内外反对抗议持续，不断暴露的事故和问题也进一步加重了国际社会的担忧。事实证明，东电管理体制存在漏洞，日方宣称的“安全、透明”的排海计划不能令人信服。\r\n\r\n随着越来越多的福岛核污染水排入大海，国际社会迫切要求日方严肃对待国内外的合理关切，本着负责任和建设性的态度妥善处理，全面配合建立有日本周边邻国等利益攸关方实质性参与、长期有效的国际监测安排，防止核污染水排海造成不可挽回的后果。\r\n\r\n内外抗议之声不断\r\n\r\n8月24日以来，伴随着核污染水的每轮排放，日本国内外都会出现新一波反对抗议高潮。\r\n\r\n11月1日，日本启动第三轮排放前夕，日本多个市民团体在东电总部前集会，强烈反对启动第三轮排放。活动组织方代表柳田真在现场表示，日本政府和东电以推进福岛第一核电站报废工作为由强行将核污染水排海，是“彻头彻尾的谎言”，核电站报废工作至今没有明确的路线图和时间表。此前，第二轮排放前的9月23日，以及第一轮排放后的8月27日，在日本东京、福岛县等地也发生了反对排海的抗议活动。\r\n\r\n国外方面，排海启动以来，多国政府、民间团体、专家学者不断发出反对抗议之声。据不完全统计，菲律宾、斐济、马来西亚、韩国、朝鲜、俄罗斯等国分别以游行示威、抗议集会、外交抗议等方式表达反对立场。\r\n\r\n11月6日开幕的“太平洋岛国论坛”首脑会议上，排海问题成为会议焦点，会议联合声明中写明，许多国家及地区对排海表示“强烈担忧”，其中，所罗门群岛等国对排海表示强烈反对。11月4日，第24次中日韩环境部长会议在名古屋举行。韩国环境部长官韩和真出席会议，并就核污染水排海向日方表示担忧。中国生态环境部部长黄润秋指出，日方应正视国际社会普遍关切，同利益攸关方特别是周边邻国进行充分协商，以负责任方式处置核污染水。\r\n\r\n值得注意的是，自启动排海以来，日本政府对内安抚、对外游说，竭力寻求国内外对核污染水排海的支持。据日本广播协会报道，日本外务省针对涉核污染水信息制定了加强性应对与传播政策，并划拨700亿日元“公关预算”。\r\n\r\n有评论指出，日本政府宁愿花钱公关，也不愿采用危害更小的处理方案。\r\n\r\n事故频发加重担忧\r\n\r\n核污染水含有多种放射性物质，处置风险极高，安全容不得半点差池，正因如此，信用与责任意识事关重大。近来发生的福岛核电站放射性废液溅射等多个事故再次证明，负责核污染水排放的东电内部管理混乱、惯于隐瞒欺骗，日方宣称的“安全、透明”的排海计划根本不能令人信服。\r\n\r\n据报道，10月25日，就在国际原子能机构到日本开展安全审查的第二天，东电却发生安全事故。由于作业人员在清洗核污染水多核素去除设备(ALPS)管道时发生水管脱落，核污染水溅出，5名工作人员接触核污染水，虽然5人当时都佩戴口罩和穿着全身防护服，但其中2人因体表辐射量一直未降到安全标准而入院。\r\n\r\n针对此次事故，东电起初称溅出的废液量为100毫升，但据日媒调查，实际溅出的废液量是东电最初公布量的数十倍。10月30日东电也改口称，当时溅出的废液量有数升。鉴于东电历史上的失信记录，此次事件进一步加重了外界对东电信用和管理漏洞的质疑。\r\n\r\n无独有偶，10月26日，在日本福岛县核污染区内，又发生了可能存在放射性风险的废弃金属被非法转卖的案件。据警方调查，被盗金属废弃物总量达数十吨，已经被相关收购企业熔解后进入市场流通，无法追踪去向并回收。按照规定，核污染区内的废弃物都应闭环管理，经除染后才能再利用，否则放射性危害将扩散并对环境造成长期影响。此案件虽然与核污染水排海没有直接关系，但却暴露出现实中存在的管理漏洞和混乱，涉及核放射物品的管理本应做到专业、严谨，这再次凸显了对核污染水排海开展国际监督的重要性。\r\n\r\n国际监测亟待推进\r\n\r\n排海启动以来，日本环境省、东电都定期向外界公布放射性检测报告，国际原子能机构也定期赴日开展安全审查、独立检测，并发布独立报告，但该机制对确保安全而言还远远不够。\r\n\r\n据《韩民族日报》报道，日本通过各种手段阻止他国对核污染水的独立验证。要保证核污染水的安全，需要多国科学家多次取样，分析放射性物质的浓度变化。但是，日本一直反对韩国等相关国家直接取样，并在排海后也坚持这一立场。\r\n\r\n中国外交部发言人指出，国际原子能机构秘书处在日本开展的海洋监测活动本质上仍然是根据与日方双边安排开展的，不足以构成一个利益攸关方充分实质参与、长期有效的国际监测安排，中方敦促日方认真回应国际社会关切，以严肃认真的态度，建立长期有效的国际监测安排。\r\n\r\n日本可再生能源研究所代表北村和哉指出，福岛事故核电站内的堆芯熔毁废物总量为880吨，目前尚无确定的取出办法，正在考虑的试验性回收措施也只是以克为单位。如果按照现在的情况发展下去，将继续产生更多核污染水，核污染水排放期限为30年的结论并不可靠。日本原子能协会福岛第一核电站废堆研讨委员会委员长宫野广也指出，“估计堆芯熔毁废物的取出最快也要50年，长则100年”。\r\n\r\n日本福岛核污染水总量巨大，排放时间长，事关全人类健康、全球海洋环境。日方应严肃对待国内外合理关切，接受利益攸关方充分实质参与、长期有效的国际监测安排，切实以科学、安全、透明方式处置核污染水。');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `manage`
---
-
-DROP TABLE IF EXISTS `manage`;
-
-CREATE TABLE `manage` (
-  `oid` int(11) NOT NULL,
-  `oname` varchar(255) NOT NULL,
-  `ocountry` varchar(255) DEFAULT NULL,
-  `odescription` text DEFAULT NULL,
-  PRIMARY KEY (`Oid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `manage`
---
-
-INSERT INTO `manage` (`oid`, `oname`, `ocountry`, `odescription`) VALUES
-(1, '拉斐尔·马里亚诺·格罗西', '阿根廷', '国际原子能机构总干事，确认日本计划将处理过的水排放到海里的做法与国际安全标准一致。'),
-(2, '岸田文雄', '日本', '日本首相，与IAEA官员就废水排放问题进行了会面。'),
-(3, '清水正孝', '日本', '日本东京电力公司前任总裁，福岛核泄露事件期间任职东京电力公司总裁，受该事件影响目前已引咎辞职。'),
-(4, '古斯塔沃·卡鲁索', '阿根廷', 'IAEA核安全与安保部门主任，领导负责监督废水排放安全和标准的工作组。'),
-(5, '汪文斌', '中国', '外交部新闻司副司长，代表中国对日本核废水排放事件持负面态度。'),
-(6, '扎哈罗娃', '俄罗斯', '俄罗斯外交部发言人，建议美国政客喝核污水，显示其支持日本的做法。'),
-(7, '拉姆·伊曼纽尔', '美国', '美国驻日本大使，在电话采访中声称日本将核污染水排海是走在“正确的路上”，并表示此次行程会在该地区的餐厅品尝当地捕获的鱼以及参观海鲜市场。'),
-(8, '布林肯', '美国', '美国国务卿，他声称美国对于日本的所作所为感到“满意”。');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `radiation`
---
-DROP TABLE IF EXISTS `radiation`;
-CREATE TABLE `radiation` (
-  `Sid` int(11) NOT NULL,
-  `Sname` varchar(255) NOT NULL,
-  `Snumber` int(11) NOT NULL,
-  `Stime` date NOT NULL,
-  PRIMARY KEY (`Sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `radiation`
---
-
-INSERT INTO `radiation` (`Sid`, `Sname`, `Snumber`, `Stime`) VALUES
-(1, '天津监测站', 71, '2023-09-13'),
-(2, '广东监测站', 94, '2023-09-13'),
-(3, '上海监测站', 66, '2023-09-13'),
-(4, '天津监测站', 72, '2023-10-16'),
-(5, '广东监测站', 106, '2023-10-16'),
-(6, '上海监测站', 76, '2023-10-16'),
-(7, '天津监测站', 75, '2023-12-10'),
-(8, '广东监测站', 109, '2023-12-10'),
-(9, '上海监测站', 74, '2023-12-10');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `substances`
---
-DROP TABLE IF EXISTS `substances`;
-CREATE TABLE `substances` (
-  `Sid` int(11) NOT NULL,
-  `Sname` varchar(255) NOT NULL,
-  `Selement` varchar(255) NOT NULL,
-  `Sintro` text NOT NULL,
-  `Slink` varchar(255) NOT NULL,
-  PRIMARY KEY (`Sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `substances`
---
-
-INSERT INTO `substances` (`Sid`, `Sname`, `Selement`, `Sintro`, `Slink`) VALUES
-(1, '铀\r\n', 'U\r\n', '铀(Uranium)是原子序数为92的元素，其元素符号是U，是自然界中能够找到的最重原生元素。在自然界中存在三种同位素，均带有放射性，拥有非常长的半衰期（数十万年~45亿年）。此外还有12种人工同位素(226U~240U)。\r\n', 'images/sub1.jpg'),
-(2, '钚\r\n', 'Pu\r\n', '钚是一种放射性元素，原子序数为94，元素符号Pu，是原子能工业的一种重要原料，可作为核燃料和核武器的裂变剂。投于长崎市的原子弹，使用了钚制作内核部分。钚于1940年12月首次在美国加州大学伯克利分校及劳伦斯伯克利国家实验室被合成 。参与合成者包括诺贝尔奖得主西博格和埃德温·麦克米伦等人。\r\n', 'images/sub2.jpg'),
-(3, '铅\r\n', 'Pb\r\n', '铅是一种金属化学元素，元素符号Pb，原子序数为82，原子量为207.2，是原子量最大的非放射性元素。金属铅为面心立方晶体。金属铅是一种耐蚀的重有色金属材料，铅具有熔点低、耐蚀性高、X射线和γ射线等不易穿透、塑性好等优点，常被加工成板材和管材，广泛用于化工、电缆、蓄电池和放射性防护等工业部门。\r\n', 'images/sub3.jpg'),
-(4, '汞\r\n', 'Hg\r\n', '汞（Hydrargyrum）是化学元素，元素符号Hg，在化学元素周期表中位于第6周期、第IIB族，第80位，俗称水银，还有“白澒、姹女、澒、神胶、元水、铅精、流珠、元珠、赤汞、砂汞、灵液、活宝、子明”等别称，是常温常压下唯一以液态存在的金属。', 'images/sub4.jpg'),
-(5, '氯化物\r\n', 'Cl\r\n', '氯化物在无机化学领域里是指带负电的氯离子和其它元素带正电的阳离子结合而形成的盐类化合物，广义上，氯化物也可以说是氯与另一种元素或基团组成的化合物。\r\n', 'images/sub5.jpg'),
-(6, '硝酸盐\r\n', 'NO3\r\n', '硝酸盐，是硝酸HNO3与金属反应形成的盐类。由金属离子（或铵离子）和硝酸根离子组成。常见的硝酸盐有硝酸钠、硝酸钾、硝酸铵、硝酸钙、硝酸铅、硝酸铈等。\r\n', 'images/sub6.jpg'),
-(8, '石油衍生物\r\n', 'CnH2n+2\r\n', '石油衍生物是指从石油中提炼或加工得到的各种化学品或燃料，包括液态燃料，气态燃料，润滑油，沥青，塑料，化肥，橡胶，合成纤维等。\r\n', 'images/sub7.jpg'),
-(9, '挥发性有机化合物\r\n', 'CnH2n+2\r\n', 'VOC是挥发性有机化合物(volatile organic compounds）的英文缩写。普通意义上的VOC就是指挥发性有机物，按照世界卫生组织的定义，如果在常下，沸点在50℃-250℃的化合物就是挥发性有机物；但是环保意义上的定义是指活泼的一类挥发性有机物，即会产生危害的那一类挥发性有机物。\r\n', 'images/sub8.jpg');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `user`
---
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `auth_key` varchar(32) NOT NULL,
-  `password_hash` text NOT NULL,
-  `password_reset_token` varchar(255) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `status` smallint(6) NOT NULL DEFAULT 10,
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) UNSIGNED ZEROFILL NOT NULL,
-  `verification_token` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `user`
---
-
-INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `verification_token`) VALUES
-(2, 'zyr', '1IAOIO4bwTzvW0oBYrixUaKINJ5zSLE8', '$2y$13$pcXNaRaE8UI7MlsNLtL9rO.w94c5c0MoAeN5wpMED8DEuj79Nvu8e', NULL, '2844259537@qq.com', 10, 1675841814, 01675841814, 'A7gOIfoq1h0ym95oabAadPeOkdTDz1t1_1675841814'),
-(3, 'admin', 'wbvdLjiKHkUcemN8ShRpg1nKgv64ZPWG', '$2y$13$gkcFSrmA91YgXDzbtdbDwe0rJ3G7jzULmiznLg0iyVbt.MzQg5Vfq', NULL, 'admin@qq.com', 10, 1676215999, 01676215999, 'cClo4NjqfB8RWyc3qHoZDYRFFRM-Fjau_1676215999'),
-(4, '123456', 'Yn9jMxjkfTVDultMnE728xCuY90-cwMl', '$2y$13$vAUxn6Ou2gCXXDLAFqPzueMG2oBVxzIraZQER6W7wBZj6p3btC01m', NULL, '839162837@qq.com', 9, 1703416749, 01703416749, 'Uu70V0mfjOyK18wWxICxq17ud7Q1f6un_1703416749'),
-(5, 'yxh', 'qfZsh8GEpw23Yz-1Thcozrggp5Ny93Kj', '$2y$13$/DRvTgsfMbVL2ED8.qGmher1tLnDhrcQ.bRHl12re99BRHDtAke4K', NULL, '2112120@mail.nankai.edu.cn', 9, 1703416873, 01703416873, 'wqaz5I7RKVGPlmSUETSv5fgP8KAJTCH4_1703416873');
-
---
--- 表的结构 `damage`
---
-
-DROP TABLE IF EXISTS `damage`;
-CREATE TABLE `damage` (
-  `did` int(11) NOT NULL,
-  `ddate` varchar(255) DEFAULT NULL,
-  `dtank` int(11) DEFAULT NULL COMMENT '单日损失',
-  `dtankAll` int(11) DEFAULT NULL COMMENT '累计损失',
-  `dUAV` int(11) DEFAULT NULL,
-  `dUAVAll` int(11) DEFAULT NULL,
-  `dcar` int(11) DEFAULT NULL,
-  `dcarAll` int(11) DEFAULT NULL,
-  PRIMARY KEY (`did`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `damage`
---
-
-INSERT INTO `damage` (`did`, `ddate`, `dtank`, `dtankAll`, `dUAV`, `dUAVAll`, `dcar`, `dcarAll`) VALUES
-(1, '2022-10-25', 21, 2611, 2, 1372, 26, 5321),
-(2, '2022-11-10', 3, 2804, 16, 1499, 16, 5682),
-(3, '2022-11-30', 3, 2914, 7, 1562, 6, 5872);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `victim`
---
-DROP TABLE IF EXISTS `victim`;
-CREATE TABLE `victim` (
-  `vid` int(11) NOT NULL,
-  `vdate` varchar(255) DEFAULT NULL,
-  `vrcount` int(11) DEFAULT NULL,
-  `vucount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`vid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=DYNAMIC;
-
---
--- 转存表中的数据 `victim`
---
-
-INSERT INTO `victim` (`vid`, `vdate`, `vrcount`, `vucount`) VALUES
-(1, '2022-06-06', 3301, 4183),
-(2, '2022-06-09', 3379, 4266),
-(3, '2022-06-10', 3444, 4339),
-(4, '2022-06-13', 3528, NULL),
-(5, '2022-06-22', 3758, 4569),
-(6, '2022-06-30', 4050, 4731),
-(7, '2022-07-04', 4157, NULL),
-(8, '2022-07-14', 4488, 5024),
-(9, '2022-08-18', 5240, 5514),
-(10, '2022-09-22', 6083, 5537);
--- --------------------------------------------------------
-
---
--- 表的索引 `user`
---
-/*
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`) USING BTREE,
-  ADD UNIQUE KEY `username` (`username`) USING BTREE,
-  ADD UNIQUE KEY `email` (`email`) USING BTREE,
-  ADD UNIQUE KEY `password_reset_token` (`password_reset_token`) USING BTREE;
-*/
-
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+```sql
+Drop table if exists NuclearIncidents;
+Drop table if exists JapanNuclearNews;
+Drop table if exists CountriesReactions;
+Drop table if exists Consequnces;
+Drop table if exists Incidents;
+Drop table if exists RadiationLevels;
+Drop table if exists EnvironmentalImpact;
+Drop table if exists HealthEffects;
+Drop table if exists NuclearFacilities;
+Drop table if exists Regulations;
+Drop table if exists EmergencyResponse;
+Drop table if exists MonitoringData;
+Drop table if exists DiffusionLevel;
+Drop table if exists InternationalLaw;
+Drop table if exists MainIncidents;
+Drop table if exists Symptom;
+Drop table if exists Consequences;
+Drop table if exists CountriesReactionsToEvents;
+Drop table if exists PublicOpinionSurvey;
+CREATE TABLE JapanNuclearNews
+(
+    news_id      INT AUTO_INCREMENT PRIMARY KEY,
+    event_date   DATE,
+    location     VARCHAR(255),
+    headline     VARCHAR(255),
+    news_content TEXT
+);
+INSERT INTO JapanNuclearNews (event_date, location, headline, news_content)
+VALUES ('2022-08-24', 'Fukushima Daiichi Nuclear Power Station',
+        'Tokyo Electric Power Company Initiates Fukushima Nuclear Contaminated Water Discharge Plan',
+        'On August 24th, Tokyo Electric Power Company officially initiated the Fukushima Daiichi Nuclear Power Station\'s plan to discharge contaminated water into the Pacific Ocean. Over twenty thousand tons of nuclear contaminated water have been discharged through three rounds so far. Local residents in Fukushima strongly oppose this action, expressing concerns about its impact on their lives and the environment.'),
+       ('2022-08-24', 'Storage Tanks', 'TEPCO Acknowledges Excessive Radioactive Content in Nuclear Wastewater',
+        'TEPCO has admitted that about 66% of the nuclear contaminated water in storage tanks currently exceeds permissible levels of radioactive materials. Despite claims by the Japanese government and TEPCO that the treated nuclear wastewater is harmless, the actual situation has raised concerns among the public and the international community.'),
+       ('2024-02-01', 'Fukushima Daiichi Nuclear Power Station',
+        'Fourth Round of Fukushima Daiichi Nuclear Power Station Nuclear Wastewater Discharge Set to Begin in February 2024',
+        'It is anticipated that a total of 7,800 tons of wastewater will be discharged during this phase, with a cumulative total of 1.2 million tons of Fukushima nuclear waste slated to be discharged into the Pacific Ocean over the next 30 years.'),
+       (NULL, NULL, 'International Concerns about Japan\'s Nuclear Wastewater Discharge Plan',
+        'Several countries and international organizations have expressed concerns regarding the Japanese government\'s decision, citing potential long-term impacts on marine ecosystems and human health. Additionally, some have criticized Western media for inadequate coverage of this event.');
+
+
+CREATE TABLE CountriesReactions
+(
+    reaction_id          INT AUTO_INCREMENT PRIMARY KEY,
+    country_name         VARCHAR(255),
+    reaction_date        DATE,
+    reaction_description TEXT
+);
+
+INSERT INTO CountriesReactions (country_name, reaction_date, reaction_description)
+VALUES ('China', '2023-08-24',
+        'The Chinese government strongly opposes this action and has suspended imports of Japanese-origin water products since August 24th. China has also called for a comprehensive investigation into the nuclear wastewater discharge to ensure nuclear safety and environmental security.'),
+       ('South Korea', '2023-08-25',
+        'The South Korean government has also expressed concerns about Japan\'s nuclear wastewater discharge and requested detailed information from the Japanese government to safeguard public health and safety.'),
+       ('United States', '2023-08-26',
+        'While expressing concern about the matter, the U.S. government appears to be cautious in its stance towards Japan\'s handling and discharge of nuclear wastewater, without explicitly opposing it.'),
+       ('International Community', '2023-08-27',
+        'The International Atomic Energy Agency (IAEA) has dispatched an expert team to Japan to assess the nuclear wastewater treatment and discharge process. Many countries and international organizations have expressed concerns about Japan\'s decision, citing potential long-term impacts on marine ecosystems and human health.');
+
+
+CREATE TABLE Consequences
+(
+    consequence_id   INT AUTO_INCREMENT PRIMARY KEY,
+    consequence_type VARCHAR(100),
+    description      TEXT
+);
+
+INSERT INTO Consequences (consequence_type, description)
+VALUES ('Impact on Marine Ecosystems',
+        'The discharged nuclear wastewater contains radioactive substances such as cesium, strontium, and tritium, which can enter the marine food chain, causing direct harm to marine life. This could result in the death of marine organisms and the disruption of ecosystems, leading to significant losses in fisheries and marine ecotourism.'),
+       ('Impact on Human Health',
+        'Once radioactive substances enter the food chain, humans can be exposed to them through food and water consumption, leading to radiation risks. Long-term exposure to nuclear radiation can potentially cause health issues such as cancer, genetic mutations, and reproductive problems. This poses significant health risks to residents in Japan and its neighboring regions, potentially affecting the quality of life for future generations.'),
+       ('Damage to International Reputation',
+        'Japan, as a highly developed country, has enjoyed a reputation for its technological advancements and commitment to environmental protection. However, the decision to discharge nuclear wastewater may raise doubts in the international community regarding Japan\'s environmental commitments, potentially damaging its reputation.'),
+       ('Political and Economic Implications in the Region',
+        'This action could exacerbate tensions between Japan and neighboring countries, especially China and South Korea. Additionally, it may impact trade and economic cooperation with these nations.'),
+       ('Uncertainty Regarding Long-term Environmental Impact',
+        'Due to the uncertain long-term environmental effects of radioactive substances, particularly on marine ecosystems and human health, there is a level of uncertainty surrounding this issue.');
+
+
+
+CREATE TABLE NuclearIncidents
+(
+    incident_id            INT AUTO_INCREMENT PRIMARY KEY,
+    event_date             DATE,
+    location               VARCHAR(255),
+    incident_type          VARCHAR(100),
+    description            TEXT,
+    impact_on_environment  TEXT,
+    impact_on_human_health TEXT,
+    international_response TEXT
+);
+
+INSERT INTO NuclearIncidents (event_date, location, incident_type, description, impact_on_environment,
+                              impact_on_human_health, international_response)
+VALUES ('1986-04-26', 'Chernobyl, Ukraine', 'Nuclear Reactor Explosion',
+        'In 1986, a nuclear reactor explosion occurred at the Chernobyl Nuclear Power Plant in the Soviet Union\'s Ukraine. It resulted in a massive release of radioactive materials, making it the worst nuclear power plant accident in history. It was classified as a Level 7 event on the International Nuclear Event Scale (INES). This accident had a significant impact on the Soviet Union and neighboring countries, particularly with approximately 60% of Belarus\' territory being contaminated by radioactive dust.',
+        'Severe damage to the environment, widespread contamination of land and water bodies.',
+        'Significant impact on human health, including radiation-related illnesses and deaths.',
+        'International response included assistance from multiple countries and organizations.');
+
+INSERT INTO NuclearIncidents (event_date, location, incident_type, description, impact_on_environment,
+                              impact_on_human_health, international_response)
+VALUES ('2011-03-11', 'Fukushima, Japan', 'Nuclear Accident',
+        'In 2011, a severe nuclear accident occurred at the Fukushima Daiichi Nuclear Power Plant in Japan\'s northeastern region. It was triggered by a powerful earthquake and subsequent tsunami in the nearby Pacific Ocean. This accident was also classified as a Level 7 event on the International Nuclear Event Scale (INES), making it one of the only two Level 7 events in history, alongside the Chernobyl disaster.',
+        'Release of radioactive materials into the environment, contamination of air and water.',
+        'Radiation exposure and related health concerns among the affected population.',
+        'International response included assistance and monitoring by various countries and organizations.');
+
+INSERT INTO NuclearIncidents (event_date, location, incident_type, description, impact_on_environment,
+                              impact_on_human_health, international_response)
+VALUES ('1979-03-28', 'Three Mile Island, Pennsylvania, USA', 'Nuclear Accident',
+        'In 1979, a partial meltdown accident took place at the Three Mile Island nuclear power plant in Pennsylvania, United States. While it did not result in direct fatalities or significant health impacts, it had a substantial effect on the nuclear power industry in the United States and globally.',
+        'Limited environmental contamination within the facility.', 'Minimal direct impact on human health.',
+        'Received attention from the U.S. government and regulatory authorities.');
+
+INSERT INTO NuclearIncidents (event_date, location, incident_type, description, impact_on_environment,
+                              impact_on_human_health, international_response)
+VALUES ('1957-09-29', 'Kyshtym, Soviet Union', 'Nuclear Waste Storage Accident',
+        'In 1957, a severe nuclear waste storage accident occurred near the city of Kyshtym in the Soviet Union. It led to a significant release of radioactive materials. This incident was kept secret by the Soviet government for an extended period and was only disclosed in the late 1980s.',
+        'Contamination of nearby areas and rivers.',
+        'Long-term health impacts on local residents due to radiation exposure.',
+        'Information about the incident was initially suppressed, with limited international response.');
+
+
+
+CREATE TABLE Incidents
+(
+    incident_id       INT AUTO_INCREMENT PRIMARY KEY,
+    incident_date     DATE,
+    location          VARCHAR(255),
+    impact_range      VARCHAR(255),
+    incident_level    VARCHAR(50),
+    description       TEXT,
+    response_measures TEXT
+);
+
+INSERT INTO Incidents (incident_date, location, impact_range, incident_level, description, response_measures)
+VALUES ('2022-01-15', 'Fukushima, Japan', 'Local area', 'Level 2', 'Minor radioactive leak from a storage tank',
+        'Evacuation of nearby residents, containment efforts initiated.'),
+       ('2019-07-28', 'Chernobyl, Ukraine', 'Regional', 'Level 7', 'Chernobyl nuclear power plant explosion',
+        'Immediate evacuation of the nearby city, international assistance requested.'),
+       ('2018-03-10', 'Sellafield, UK', 'Local area', 'Level 3', 'Chemical fire at a nuclear facility',
+        'Emergency response team deployed, containment and cleanup operations.'),
+       ('2015-11-20', 'Tokai, Japan', 'Local area', 'Level 2', 'Radioactive material spill during transportation',
+        'Immediate cleanup efforts, radiation monitoring in the area.'),
+       ('2014-06-05', 'Hanford, USA', 'Local area', 'Level 2', 'Underground storage tank leakage',
+        'Isolation of the affected area, initiation of tank repairs.'),
+       ('2012-09-18', 'Tomsk, Russia', 'Regional', 'Level 4', 'Nuclear facility cooling system failure',
+        'Emergency shutdown of the facility, cooling system repair work.'),
+       ('2010-12-02', 'Windscale, UK', 'Local area', 'Level 3', 'Nuclear reactor overheating incident',
+        'Cooling system restored, assessment of radioactive release.'),
+       ('2008-04-14', 'Seversk, Russia', 'Local area', 'Level 2', 'Contaminated water leak at a nuclear site',
+        'Immediate containment and cleanup operation.'),
+       ('2006-02-08', 'Savannah River, USA', 'Local area', 'Level 2', 'Radioactive material exposure incident',
+        'Medical evaluation of affected personnel, decontamination procedures.'),
+       ('2003-10-17', 'Tsuruga, Japan', 'Local area', 'Level 2', 'Unplanned nuclear reactor shutdown',
+        'Investigation into the cause, safety improvements implemented.');
+
+
+
+CREATE TABLE DiffusionLevel
+(
+    level_id            INT AUTO_INCREMENT PRIMARY KEY,
+    region              VARCHAR(255),
+    radiation_dose_rate DECIMAL(10, 2),
+    radiation_source    VARCHAR(255),
+    monitoring_time     DATETIME
+);
+
+INSERT INTO DiffusionLevel (region, radiation_dose_rate, radiation_source, monitoring_time)
+VALUES ('Tokyo, Japan', 0.12, 'Background radiation', '2022-01-15 08:00:00'),
+       ('Chernobyl, Ukraine', 125.78, 'Chernobyl Exclusion Zone', '2022-01-15 12:30:00'),
+       ('Los Angeles, USA', 0.10, 'Background radiation', '2022-01-15 14:15:00'),
+       ('Sellafield, UK', 0.25, 'Nuclear facility vicinity', '2022-01-15 10:45:00'),
+       ('Savannah River, USA', 0.18, 'Nuclear research facility', '2022-01-15 16:20:00'),
+       ('Seversk, Russia', 0.15, 'Nearby nuclear complex', '2022-01-15 11:10:00'),
+       ('Fukushima, Japan', 0.30, 'Fukushima Daiichi plant', '2022-01-15 09:55:00'),
+       ('Paris, France', 0.08, 'Background radiation', '2022-01-15 13:40:00'),
+       ('Beijing, China', 0.09, 'Background radiation', '2022-01-15 15:05:00'),
+       ('Sydney, Australia', 0.11, 'Background radiation', '2022-01-15 17:30:00');
+
+
+CREATE TABLE EnvironmentalImpact
+(
+    impact_id          INT AUTO_INCREMENT PRIMARY KEY,
+    impact_type        VARCHAR(50),
+    location           VARCHAR(255),
+    impact_description TEXT,
+    environmental_data TEXT
+);
+
+INSERT INTO EnvironmentalImpact (impact_type, location, impact_description, environmental_data)
+VALUES ('Marine Ecosystem', 'Pacific Ocean', 'Impact on marine life due to radioactive contamination.',
+        'Decrease in fish population, mutations in marine organisms.'),
+       ('Soil Contamination', 'Fukushima, Japan', 'Contamination of soil with radioactive materials.',
+        'Increased levels of cesium and strontium in soil, reduced agricultural productivity.'),
+       ('Biodiversity', 'Chernobyl Exclusion Zone', 'Impact on biodiversity in the Chernobyl area.',
+        'Decrease in the number of certain species, increased population of others.'),
+       ('Air Quality', 'Los Angeles, USA', 'Impact on air quality due to nuclear facility emissions.',
+        'Increase in air pollutants, impact on respiratory health.'),
+       ('Water Pollution', 'Sellafield, UK', 'Contamination of water bodies near nuclear facilities.',
+        'Elevated levels of radioactive isotopes in water, harm to aquatic life.'),
+       ('Ecosystem Disruption', 'Savannah River, USA',
+        'Disruption of local ecosystems near a nuclear research facility.',
+        'Altered habitats, changes in species composition.'),
+       ('Groundwater Contamination', 'Seversk, Russia', 'Contamination of groundwater near a nuclear complex.',
+        'Presence of radioactive materials in groundwater, potential health risks.'),
+       ('Vegetation Impact', 'Fukushima, Japan', 'Impact on plant life due to radiation exposure.',
+        'Stunted growth, mutations in plants.'),
+       ('Urban Environment', 'Tokyo, Japan', 'Impact on the urban environment due to radiation concerns.',
+        'Public anxiety, food safety concerns.');
+
+CREATE TABLE HealthEffects
+(
+    effect_id             INT AUTO_INCREMENT PRIMARY KEY,
+    health_condition      VARCHAR(100),
+    radiation_exposure    DECIMAL(10, 2),
+    cancer_incidence_rate DECIMAL(5, 2),
+    genetic_mutations     INT,
+    statistics            TEXT
+);
+
+INSERT INTO HealthEffects (health_condition, radiation_exposure, cancer_incidence_rate, genetic_mutations, statistics)
+VALUES ('Thyroid Cancer', 0.15, 3.5, 25, 'Higher incidence rate among exposed population.'),
+       ('Leukemia', 0.25, 5.2, 18, 'Increased cases of leukemia in affected areas.'),
+       ('Lung Cancer', 0.10, 2.8, 15, 'Elevated risk of lung cancer due to radiation exposure.'),
+       ('Birth Defects', 0.30, 4.0, 30, 'Higher rate of birth defects among newborns in contaminated regions.'),
+       ('Genetic Disorders', 0.20, 3.0, 22, 'Increased genetic mutations and inherited disorders.'),
+       ('Thyroid Abnormalities', 0.12, 2.0, 12,
+        'Higher occurrence of thyroid abnormalities among exposed individuals.'),
+       ('Skin Diseases', 0.18, 3.7, 28, 'Increased cases of skin diseases due to radiation exposure.'),
+       ('Respiratory Issues', 0.08, 1.5, 10, 'Higher incidence of respiratory problems in affected populations.'),
+       ('Cataracts', 0.10, 1.8, 14, 'Elevated risk of cataracts among those exposed to radiation.'),
+       ('Cardiovascular Diseases', 0.14, 2.5, 20, 'Increased cases of heart diseases linked to radiation exposure.');
+
+
+
+CREATE TABLE NuclearFacilities
+(
+    facility_id              INT AUTO_INCREMENT PRIMARY KEY,
+    facility_name            VARCHAR(255),
+    facility_type            VARCHAR(100),
+    location                 VARCHAR(255),
+    operational_status       VARCHAR(50),
+    technical_specifications TEXT,
+    safety_measures          TEXT
+);
+
+INSERT INTO NuclearFacilities (facility_name, facility_type, location, operational_status, technical_specifications,
+                               safety_measures)
+VALUES ('Tokyo Nuclear Power Plant', 'Nuclear Power Plant', 'Tokyo, Japan', 'Operational',
+        'Technical specifications: 1000 MW capacity, pressurized water reactor.',
+        'Safety measures: Regular safety drills and emergency response protocols.'),
+       ('Osaka Nuclear Facility', 'Research Facility', 'Osaka, Japan', 'Operational',
+        'Technical specifications: Research and development on advanced nuclear technologies.',
+        'Safety measures: Strict access control and radiation monitoring.'),
+       ('Fukushima Nuclear Reactor', 'Nuclear Power Plant', 'Fukushima, Japan', 'Shutdown',
+        'Technical specifications: Boiling water reactor with a 900 MW capacity.',
+        'Safety measures: Ongoing decommissioning and decontamination efforts.'),
+       ('Kyoto Nuclear Research Center', 'Research Facility', 'Kyoto, Japan', 'Operational',
+        'Technical specifications: Conducts nuclear physics research and experiments.',
+        'Safety measures: Stringent safety protocols and containment measures.'),
+       ('Sendai Nuclear Testing Site', 'Testing Facility', 'Sendai, Japan', 'Operational',
+        'Technical specifications: Used for nuclear testing and experiments.',
+        'Safety measures: Restricted access and controlled testing procedures.'),
+       ('Hiroshima Nuclear Facility', 'Research Facility', 'Hiroshima, Japan', 'Operational',
+        'Technical specifications: Focuses on nuclear medicine and radiopharmaceuticals research.',
+        'Safety measures: Radiation safety training and protective gear.'),
+       ('Nagasaki Nuclear Power Plant', 'Nuclear Power Plant', 'Nagasaki, Japan', 'Operational',
+        'Technical specifications: Pressurized heavy water reactor with 800 MW capacity.',
+        'Safety measures: Regular inspections and safety drills.'),
+       ('Okinawa Nuclear Research Center', 'Research Facility', 'Okinawa, Japan', 'Operational',
+        'Technical specifications: Conducts marine and environmental research.',
+        'Safety measures: Radiation monitoring and environmental impact studies.'),
+       ('Sapporo Nuclear Laboratory', 'Research Facility', 'Sapporo, Japan', 'Operational',
+        'Technical specifications: Engaged in nuclear physics and materials research.',
+        'Safety measures: Laboratory safety protocols and waste disposal.'),
+       ('Nagoya Nuclear Storage Facility', 'Storage Facility', 'Nagoya, Japan', 'Operational',
+        'Technical specifications: Stores nuclear materials and waste securely.',
+        'Safety measures: Robust security measures and waste containment procedures.');
+
+
+
+CREATE TABLE Regulations
+(
+    regulation_id    INT AUTO_INCREMENT PRIMARY KEY,
+    regulation_name  VARCHAR(255),
+    publication_date DATE,
+    description      TEXT,
+    applicable_scope VARCHAR(255)
+);
+
+
+INSERT INTO Regulations (regulation_name, publication_date, description, applicable_scope)
+VALUES ('Nuclear Safety Act', '2023-01-15',
+        'This act outlines safety regulations for nuclear facilities and activities.', 'National'),
+       ('Environmental Protection Regulation', '2022-07-20',
+        'These regulations set standards for environmental protection related to nuclear activities.', 'National'),
+       ('Radiation Monitoring Guidelines', '2023-03-10',
+        'Guidelines for monitoring radiation levels in the vicinity of nuclear facilities.', 'National'),
+       ('Nuclear Waste Disposal Regulations', '2022-11-30',
+        'Regulations for the safe disposal of nuclear waste materials.', 'National'),
+       ('International Atomic Energy Agency (IAEA) Standards', '2022-05-05',
+        'Standards set by the IAEA for nuclear safety and security.', 'International'),
+       ('Nuclear Facility Licensing Rules', '2023-02-28', 'Rules governing the licensing of nuclear facilities.',
+        'National'),
+       ('Nuclear Research Ethics Code', '2022-09-12', 'Ethical code for conducting nuclear research and experiments.',
+        'National'),
+       ('Emergency Response Plan Guidelines', '2023-04-18',
+        'Guidelines for emergency response plans for nuclear accidents.', 'National'),
+       ('Nuclear Material Transportation Regulations', '2022-08-25',
+        'Regulations for the safe transportation of nuclear materials.', 'National'),
+       ('Nuclear Security Protocols', '2022-12-10', 'Security protocols for nuclear facilities and materials.',
+        'National');
+
+
+
+CREATE TABLE EmergencyResponse
+(
+    response_id         INT AUTO_INCREMENT PRIMARY KEY,
+    event_id            INT,
+    response_plan       TEXT,
+    response_team       VARCHAR(255),
+    resource_allocation TEXT,
+    contact_information TEXT
+);
+
+INSERT INTO EmergencyResponse (event_id, response_plan, response_team, resource_allocation, contact_information)
+VALUES (1, 'Activate the emergency response plan for a nuclear accident.', 'Emergency Response Team A',
+        'Allocate resources as per the response plan.', 'Emergency Contact: John Doe (123-456-7890)'),
+       (2, 'Implement the evacuation plan for a nearby nuclear facility incident.', 'Emergency Response Team B',
+        'Mobilize emergency personnel and equipment.', 'Emergency Contact: Jane Smith (987-654-3210)'),
+       (3, 'Respond to a radiation leak incident at a research facility.', 'Radiation Response Team',
+        'Secure the affected area and initiate decontamination procedures.',
+        'Emergency Contact: Dr. James Wilson (555-123-4567)'),
+       (4, 'Handle a nuclear materials transportation accident.', 'Transportation Response Team',
+        'Coordinate with local authorities and ensure the safety of the public.',
+        'Emergency Contact: Transportation Control Center (800-555-1234)'),
+       (5, 'Address a security breach at a nuclear power plant.', 'Security Response Team',
+        'Engage in security protocols and collaborate with law enforcement.',
+        'Emergency Contact: Security Control Center (911)'),
+       (6, 'Manage a nuclear waste disposal facility incident.', 'Waste Facility Response Team',
+        'Contain the incident and minimize environmental impact.',
+        'Emergency Contact: Environmental Protection Agency (EPA)'),
+       (7, 'Respond to a nuclear research lab accident.', 'Research Lab Response Team',
+        'Isolate the affected area and provide medical assistance to affected personnel.',
+        'Emergency Contact: Lab Director (777-888-9999)'),
+       (8, 'React to a radiation exposure incident in a community.', 'Community Response Team',
+        'Provide medical care to affected individuals and monitor radiation levels.',
+        'Emergency Contact: Local Health Department (123-987-6543)'),
+       (9, 'Handle a nuclear safety breach at a nuclear facility.', 'Safety Response Team',
+        'Secure the facility and investigate the breach.',
+        'Emergency Contact: Facility Security Office (555-555-5555)'),
+       (10, 'Respond to a nuclear incident involving multiple facilities.', 'Multi-Facility Response Team',
+        'Coordinate resources and communication among affected facilities.',
+        'Emergency Contact: Incident Command Center (911)');
+
+
+
+CREATE TABLE MonitoringData
+(
+    data_id              INT AUTO_INCREMENT PRIMARY KEY,
+    event_id             INT,
+    monitoring_station   VARCHAR(255),
+    monitoring_time      DATETIME,
+    radiation_level      DECIMAL(10, 2),
+    environmental_impact TEXT,
+    weather_data         TEXT
+);
+
+
+
+INSERT INTO MonitoringData (event_id, monitoring_station, monitoring_time, radiation_level, environmental_impact,
+                            weather_data)
+VALUES (1, 'Station - Tokyo', '2023-08-15 09:00:00', 0.25, 'No significant environmental impact observed.',
+        'Clear skies and calm weather conditions.'),
+       (2, 'Station - Osaka', '2023-08-15 09:30:00', 0.18, 'Minimal impact on the environment.',
+        'Partly cloudy with light rain showers.'),
+       (3, 'Station - Fukushima', '2023-08-15 10:00:00', 0.30, 'Localized impact on aquatic life.',
+        'Overcast skies with scattered thunderstorms.'),
+       (4, 'Station - Kyoto', '2023-08-15 10:30:00', 0.12, 'No significant environmental impact observed.',
+        'Sunny and warm conditions.'),
+       (5, 'Station - Sendai', '2023-08-15 11:00:00', 0.22, 'Minimal impact on soil quality.',
+        'Partly cloudy with a light breeze.'),
+       (6, 'Station - Hiroshima', '2023-08-15 11:30:00', 0.28, 'Localized impact on vegetation.',
+        'Partly cloudy with occasional showers.'),
+       (7, 'Station - Nagasaki', '2023-08-15 12:00:00', 0.20, 'No significant environmental impact observed.',
+        'Clear skies and calm weather conditions.'),
+       (8, 'Station - Okinawa', '2023-08-15 12:30:00', 0.15, 'Minimal impact on marine life.',
+        'Partly cloudy with a moderate breeze.'),
+       (9, 'Station - Sapporo', '2023-08-15 13:00:00', 0.32, 'Localized impact on wildlife habitat.',
+        'Overcast skies with occasional rain.'),
+       (10, 'Station - Nagoya', '2023-08-15 13:30:00', 0.14, 'No significant environmental impact observed.',
+        'Sunny with a few clouds.');
+
+
+
+CREATE TABLE RadiationLevels
+(
+    level_id            INT AUTO_INCREMENT PRIMARY KEY,
+    latitude            DECIMAL(10, 6),
+    longitude           DECIMAL(10, 6),
+    radiation_dose_rate DECIMAL(10, 2),
+    radiation_source    VARCHAR(255),
+    monitoring_time     DATETIME
+);
+
+INSERT INTO RadiationLevels (latitude, longitude, radiation_dose_rate, radiation_source, monitoring_time)
+VALUES (37.7749, 140.4674, 0.25, 'Fukushima Daiichi plant', '2023-11-01 08:23:45'),
+       (35.6895, 139.6917, 0.22, 'Fukushima Daiichi plant', '2023-11-01 09:45:12'),
+       (34.6937, 135.5022, 0.28, 'Fukushima Daiichi plant', '2023-11-01 11:18:30'),
+       (36.2048, 138.2529, 0.24, 'Fukushima Daiichi plant', '2023-11-01 13:42:15'),
+       (33.5904, 130.4017, 0.30, 'Fukushima Daiichi plant', '2023-11-01 15:09:37'),
+       (32.6204, 129.7600, 0.18, 'Fukushima Daiichi plant', '2023-11-02 07:56:24'),
+       (35.0116, 135.7681, 0.21, 'Fukushima Daiichi plant', '2023-11-02 10:27:50'),
+       (31.9686, 130.9900, 0.26, 'Fukushima Daiichi plant', '2023-11-02 12:55:18'),
+       (35.4437, 139.6380, 0.23, 'Fukushima Daiichi plant', '2023-11-02 14:37:42'),
+       (35.6895, 139.6917, 0.32, 'Fukushima Daiichi plant', '2023-11-04 09:12:30'),
+       (34.6937, 135.5022, 0.19, 'Fukushima Daiichi plant', '2023-11-04 11:45:54'),
+       (36.2048, 138.2529, 0.27, 'Fukushima Daiichi plant', '2023-11-04 14:18:21'),
+       (33.5904, 130.4017, 0.25, 'Fukushima Daiichi plant', '2023-11-04 16:42:45'),
+       (32.6204, 129.7600, 0.31, 'Fukushima Daiichi plant', '2023-11-05 08:56:12'),
+       (35.0116, 135.7681, 0.23, 'Fukushima Daiichi plant', '2023-11-05 10:27:38'),
+       (31.9686, 130.9900, 0.28, 'Fukushima Daiichi plant', '2023-11-05 12:55:04'),
+       (35.4437, 139.6380, 0.20, 'Fukushima Daiichi plant', '2023-11-05 14:37:29'),
+       (38.2682, 140.8694, 0.26, 'Fukushima Daiichi plant', '2023-11-06 16:20:53'),
+       (39.9334, 140.0754, 0.22, 'Fukushima Daiichi plant', '2023-11-06 18:44:18'),
+       (37.7749, 140.4674, 0.29, 'Fukushima Daiichi plant', '2023-11-03 16:20:09');
+
+
+CREATE TABLE InternationalLaw
+(
+    regulation_id    INT AUTO_INCREMENT PRIMARY KEY,
+    regulation_name  VARCHAR(255),
+    publication_date DATE,
+    description      TEXT,
+    applicable_scope VARCHAR(255)
+);
+INSERT INTO InternationalLaw (regulation_name, publication_date, description, applicable_scope)
+VALUES ('核安全法', '2023-01-15', '确保核设施和活动的安全性。', '国家'),
+       ('环境保护法', '2023-02-20', '规范环境影响和污染控制。', '国家'),
+       ('国际核废物处置协议', '2023-03-10', '跨境核废物处置协议。', '国际'),
+       ('辐射监测标准', '2023-04-05', '规定辐射水平监测标准。', '国家'),
+       ('核事故应急响应协议', '2023-05-18', '概述应对核事故的程序。', '国家'),
+       ('核工作者健康安全法规', '2023-06-22', '确保核设施工作者的健康与安全。', '国家');
+
+CREATE TABLE MainIncidents
+(
+    incident_id            INT AUTO_INCREMENT PRIMARY KEY,
+    event_date             DATE,
+    location               VARCHAR(255),
+    incident_type          VARCHAR(255),
+    description            TEXT,
+    environmental_impact   TEXT,
+    health_impact          TEXT,
+    international_response TEXT
+);
+
+INSERT INTO MainIncidents (event_date, location, incident_type, description, environmental_impact, health_impact,
+                              international_response)
+VALUES ('2023-11-20', '福岛附近海域', '事故通报', '日本政府发布关于核排放的事故通报。', '周边海域生态系统受到直接冲击',
+        '居民提高警觉，媒体广泛报道', '国际社群表示关切，要求提供更多数据和信息。'),
+       ('2023-11-25', '太平洋沿岸', '边界国家关切', '邻国就核废水扩散表达关切，提出共同研究请求。',
+        '边界海域渔业和生态系统受到威胁', '公众担忧水产品安全和健康问题', '国际社会加强对日本的环境监测要求。'),
+       ('2023-11-26', '亚洲周边海域', '国际峰会讨论', '核废水问题成为国际峰会议题，多国呼吁联合行动。',
+        '亚洲周边海域受到潜在威胁', '国际卫生组织呼吁加强健康监测', '部分国家提出谴责声明，要求日本停止排放核废水。'),
+       ('2023-11-06', '福岛', '核污水排放', '日本政府宣布向大海排放核污水。', '海洋生态系统受到影响', '居民担忧健康风险',
+        '国际社群对此表达担忧，呼吁透明沟通。'),
+       ('2023-11-12', '东京湾', '海洋排放计划实施', '日本开始实施核污水向海洋排放计划。', '渔业受到直接影响',
+        '公众关切水产品安全', '邻国就核排放提出抗议，要求紧急磋商。'),
+       ('2023-11-15', '太平洋', '核废水扩散', '核废水扩散至太平洋各地。', '海洋生态系统受到广泛污染',
+        '国内外关切核废水长期影响', '国际社会对日本核排放行为谴责，要求采取措施保护环境。');
+
+
+
+CREATE TABLE Symptom
+(
+    effect_id             INT AUTO_INCREMENT PRIMARY KEY,
+    health_condition      VARCHAR(100),
+    radiation_exposure    DECIMAL(10, 2),
+    cancer_incidence_rate DECIMAL(5, 2),
+    genetic_mutations     TEXT,
+    statistics_data       TEXT
+);
+INSERT INTO Symptom (health_condition, radiation_exposure, cancer_incidence_rate, genetic_mutations,
+                           statistics_data)
+VALUES ('白血病', 2.5, 3.8, '对核辐射敏感基因发生变异', '统计数据表明核事故地区白血病患者增加'),
+       ('甲状腺癌', 1.8, 2.2, '甲状腺相关基因发生变异', '癌症发病率在核事故地区上升'),
+       ('遗传突变', 3.2, 1.5, '家族中出现新的遗传突变', '遗传突变可能与核辐射有关'),
+       ('心血管疾病', 1.5, 4.5, '辐射引起心血管系统问题', '辐射暴露与心血管疾病发病率关联'),
+       ('生育异常', 2.8, 1.2, '辐射影响生育健康', '统计数据显示生育异常率上升'),
+       ('呼吸系统疾病', 2.0, 3.0, '辐射引起呼吸问题', '核污染地区呼吸系统疾病增多');
+
+CREATE TABLE CountriesReactionsToEvents
+(
+    ReactionID          INT PRIMARY KEY,
+    EventID             INT,
+    Country             VARCHAR(255),
+    ReactionDescription TEXT
+);
+
+INSERT INTO CountriesReactionsToEvents (ReactionID, EventID, Country, ReactionDescription)
+VALUES (2, 1, '美国',
+        '美国政府就日本核废水处理问题发表了声明，要求日本提供更多关于处理过程的详细信息。声明中强调了对核安全和环境保护的重要性，呼吁国际社会共同努力解决这一问题。'),
+
+       (3, 1, '中国',
+        '中国政府对日本核废水排放表示关切，呼吁进行国际调查，确保处理过程的透明度和公正性。中国还强调了国际社会共同应对核安全挑战的必要性。'),
+
+       (4, 2, '韩国',
+        '韩国政府要求日本废水处理过程的透明度，对处理方式提出质疑。韩国暂时中断了与日本的外交谈判，并与国际社会协调行动，以确保核废水排放问题得到妥善解决。'),
+
+       (5, 2, '俄罗斯',
+        '俄罗斯政府对日本暂停外交谈判表示关切。俄罗斯强调了国际社会在核安全问题上的合作重要性，并呼吁各国共同努力应对核废水排放挑战。'),
+
+       (6, 2, '德国',
+        '德国政府提供在核废水处理方面的协助，包括技术支持和经验分享。德国呼吁国际社会加强合作，共同制定更严格的核安全标准和监管机制。'),
+
+       (7, 3, '澳大利亚',
+        '澳大利亚政府表达对日本的支持，并提供支持，包括分享先进的环境监测技术和协助应对可能出现的环境影响。澳大利亚强调国际合作对于解决核废水排放问题的重要性。'),
+
+       (8, 3, '法国',
+        '法国政府呼吁联合国召开紧急会议，共同讨论日本核废水排放问题。法国强调了国际社会在核安全领域的协作必要性，并提供支持协调国际行动。'),
+
+       (9, 4, '加拿大',
+        '加拿大政府要求进行独立调查，以评估日本核废水处理的安全性和环境影响。加拿大强调了透明度和公正性在核废水问题解决中的关键作用。'),
+
+       (10, 4, '印度',
+        '印度政府建议在核安全措施方面进行地区合作，以共同应对核废水排放的挑战。印度呼吁国际社会共同努力，确保核能的安全和可持续发展。'),
+
+       (11, 5, '英国',
+        '英国政府提供核废水处理方面的技术专业知识，并表示愿意与其他国家分享最佳实践。英国呼吁国际社会制定更严格的核废水排放标准，并共同努力维护全球核安全。'),
+
+       (12, 5, '巴西',
+        '巴西政府呼吁召开国际核安全大会，为全球核能安全提供平台。巴西表示将积极参与国际合作，共同应对核废水排放等核安全问题。');
+
+CREATE TABLE PublicOpinionSurvey
+(
+    SurveyID      INT PRIMARY KEY,
+    SurveyDate    DATE,
+    SurveyResults TEXT
+);
+INSERT INTO PublicOpinionSurvey (SurveyID, SurveyDate, SurveyResults)
+VALUES (1, '2023-11-05', '公众对日本核污水排放问题表达极大关切，认为这可能对环境和健康产生负面影响。'),
+       (2, '2023-11-12', '调查显示公众对于日本核污水排放的信息透明度存在疑虑，希望政府提供更多详细信息。'),
+       (3, '2023-11-20', '有人表示对日本政府的核污水处理计划表示支持，认为这是必要的决定。'),
+       (4, '2023-11-27', '部分受访者对日本政府核污水排放的紧急响应措施表示不满，认为需要更加有力的行动。'),
+       (5, '2023-11-30', '公众对国际社会对日本核污水问题的关注表示理解，呼吁国际合作解决这一挑战。'),
+       (6, '2023-12-05', '有人提出建议，认为日本政府在核污水排放问题上应该听取公众意见，并进行更广泛的公众参与。'),
+       (7, '2023-12-12', '一些受访者对日本政府对核污水问题的风险沟通方式提出批评，认为需要更加透明和及时的信息发布。'),
+       (8, '2023-12-20', '有人呼吁日本政府与专业机构合作，进行独立的核污水影响评估，并公开评估结果。'),
+       (9, '2023-12-27', '调查结果显示，公众对于核污水问题的长期影响存在担忧，希望政府采取有效措施确保环境和健康安全。'),
+       (10, '2023-12-30', '有人表示对于核污水问题的解决需要国际社会共同努力，呼吁联合国等国际组织介入解决。'),
+       (11, '2024-01-01', '公众对于核污水排放的技术处理方案提出质疑，认为需要进行更加全面和科学的评估。'),
+       (12, '2024-01-02', '部分受访者对于日本政府的核污水排放决定表示支持，认为政府已经充分考虑了环境和人类健康的因素。');
+
+
+```
+
